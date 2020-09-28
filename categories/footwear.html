@@ -1,0 +1,23 @@
+<div class="object-panel-wrap" id="cp-footwear">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+            <div class="remove-category" data-category="footwear">
+                <p class="sr-only">Remove object</p>
+            </div>
+
+            {% for item in site.data.footwear %}
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}}{% endfor %}" data-category="footwear" data-classes="{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}">
+                <span>
+                    <img class="preview" src="/objects/footwear/icons/{{ item.icon }}" alt="{{ item.name }}" />
+
+                    <div class="object footwear{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="footwear{% if item.position %}-{{ item.position }}{% endif %}-holder" data-classes="{% for rule in item.rules %}{{rule.rule}} {% endfor %}">
+                        {% include_relative objects/footwear/{{ item.image }} %}
+                    </div>
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

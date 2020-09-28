@@ -1,0 +1,190 @@
+## Optinal Rules for shoes:
+
+
+- name: Lederhosen
+  image: 24_Footwear_Lederhosen.svg
+  icon: Footwear_Lederhosen.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Dirndl
+  image: 25_Footwear_Dirndl_v1.svg
+  icon: Footwear_dirndl.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Cleats
+  image: 26_Footwear_GermanFootballCleats_v1.svg
+  icon: Footwear_GermanFootballCleats.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Kraftwerk Shoes
+  image: 27_Footwear_KraftwerkShoes_v1.svg
+  icon: Footwear_KraftwerkShoes.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Tracksuit
+  image: 28_Footwear_AdidasTracksuit_v2.svg
+  icon: Footwear-AdidasTracksuit.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Astronaut
+  image: 29_Footwear_Astronaut_v1.svg
+  icon: Footwear_Astronaut.svg
+  position: back
+  rules:
+    - rule:
+
+
+
+
+- name:
+  image: 01_Footwear_Cowboy_Boots_v01.svg
+  icon: footwear-cowboyboots.svg
+  position: back
+  rules:
+    - rule:
+
+- name:
+  image: 02_Footwear_Platform_Shoes_v01.svg
+  icon: footwear-platformshoes.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 03_Footwear_HighHeels_v03.svg
+  icon: footwear-highheels.svg
+  position: back
+  rules:
+    - rule:
+
+- name:
+  image: 04_Footwear_MensDress_Shoes_v02.svg
+  icon: footwear-mendressshoes.svg
+  position: back
+  rules:
+    - rule:
+
+- name:
+  image: 05_Footwear_Snow_Boots_v01.svg
+  icon: footwear-snow-boots.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 06_Footwear_Cyclist_Shoes_v01.svg
+  icon: footwear-cyclistshoes.svg
+  position: back
+  rules:
+    - rule:
+
+- name:
+  image: 07_Footwear_PJ_Slippers_v01.svg
+  icon: footwear-pj-slippers.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 08_Footwear_Superhero_Boots_v01.svg
+  icon: footwear-superheroboots.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 09_Footwear_Firefighter_Boots_v01.svg
+  icon: footwear-firefighter-boots.svg
+  position: back
+  rules:
+    - rule:
+
+- name:
+  image: 10_Footwear_Wizard_Sandals_v01.svg
+  icon: footwear-wizard-sandals.svg
+  position: back
+  rules:
+    - rule:
+
+- name:
+  image: 12_Footwear_Scuba_Flippers_v01.svg
+  icon: footwear-scuba-flippers.svg
+  position:
+  rules:
+    - rule:
+
+
+- name:
+  image: 13_Footwear_Ballet_Shoes_v02.svg
+  icon: footwear-balletshoes.svg
+  position:
+  rules:
+    - rule:
+
+
+- name:
+  image: 14_Footwear_BunnySuit_v01.svg
+  icon: footwear-bunnysuit.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 15_Footwear_ArmorSuit_Boots_v01.svg
+  icon: footwear-armorsuit-boots.svg
+  position: front
+  rules:
+    - rule:
+
+
+- name:
+  image: 16_Footwear_Combat_Boots_v01.svg
+  icon: footwear-combatboots.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 17_Footwear_Clogs_v01.svg
+  icon: footwear-clogs.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 18_Footwear_Cleats_v01.svg
+  icon: footwear-cleats.svg
+  position: back
+  rules:
+    - rule:
+
+- name:
+  image: 19_Footwear_HighTops_Sneakers_v01.svg
+  icon: footwear-hightopsneakers.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 20_Footwear_Athletic_Shoes_v01.svg
+  icon: footwear-athleticshoes.svg
+  position:
+  rules:
+    - rule:
+
+- name:
+  image: 21_Footwear_ConverseVans_Shoes_v01.svg
+  icon: footwear-converseshoes.svg
+  position:
+  rules:
+    - rule:

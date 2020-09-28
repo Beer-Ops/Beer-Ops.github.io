@@ -1,0 +1,210 @@
+## Optinal Rules for hair: hide-headgear
+
+- name: Pixie
+  image: 10_Hair_Pixie_v03.svg
+  icon: hair-pixie.svg
+  rules:
+    # - rule: hair-with-headgear
+
+- name: Bob
+  image: 11_Hair_Bob_v03-back.svg
+  icon: hair-bob.svg
+  moreObjects:
+      - object: 11_Hair_Bob_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+
+- name: Rainbow Streak
+  image: 12_Hair_RainbowStreak_v03-back.svg
+  icon: hair-rainbowstreak.svg
+  moreObjects:
+      - object: 12_Hair_RainbowStreak_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+    #
+
+- name: Dip dyed
+  image: 13_Hair_DipDyed_v03-back.svg
+  moreObjects:
+      - object: 13_Hair_DipDyed_v03-front.svg
+  icon: hair-dipdyed.svg
+  rules:
+    # - rule: hair-with-headgear
+
+- name: Pigtails
+  image: 14_Hair_Pigtails_v03-back.svg
+  icon: hair-pigtails.svg
+  moreObjects:
+      - object: 14_Hair_Pigtails_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+- name: Milkmaid Braids
+  image: 15_Hair_MilkmaidBraids_v03-back.svg
+  icon: hair-milkmaidbraids.svg
+  moreObjects:
+      - object: 15_Hair_MilkmaidBraids_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+- name: Front Bangs
+  image: 16_Hair_FrontBangs_v03-back.svg
+  icon: hair-frontbangs.svg
+  moreObjects:
+      - object: 16_Hair_FrontBangs_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+- name: Shaved
+  image: 17_Hair_Shaved_v01.svg
+  icon: hair-shaved.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+- name: Pompadour
+  image: 08_Hair_Pompadour_v03.svg
+  icon: hair-pompadour.svg
+  rules:
+    #- rule: medium-hair
+    # - rule: hair-with-headgear
+
+
+
+- name: Curly Short
+  image: 18_Hair_CurlyShort_v03.svg
+  icon: hair-curlyshort.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+- name: Soft Waves Short
+  image: 19_Hair_SoftWavesShort_v03.svg
+  icon: hair-softwavesshort.svg
+  rules:
+    #- rule: medium-hair
+    # - rule: hair-with-headgear
+
+- name: undercut
+  image: 06_Hair_Undercut_v03.svg
+  icon: hair-undercut.svg
+  rules:
+    #- rule: big-hair
+
+
+- name: Soft Waves Long
+  image: 20_Hair_SoftWavesLong_v03.svg
+  icon: hair-softwaveslong.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+
+
+
+- name: Side Part Bangs Straight Medium
+  image: 22_Hair_SidePartBangsStraightMed_v03.svg
+  icon: hair-sidepartsbangsstraightmed.svg
+  rules:
+    # - rule: hair-with-headgear
+
+- name: Side Part Bangs Wavy Medium
+  image: 23_Hair_SidePartBangsWavytMed_v03-back.svg
+  icon: hair-sidepartswavymed.svg
+  moreObjects:
+      - object: 23_Hair_SidePartBangsWavytMed_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+
+- name: Side Part Bangs Curly Medium
+  image: 24_Hair_SidePartBangsCurlyMed_v03-back.svg
+  icon: hair-sidepartbangcurlymed.svg
+  moreObjects:
+      - object: 24_Hair_SidePartBangsCurlyMed_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+
+- name: Ponytail Low
+  image: 25_Hair_PonytailLow_v03.svg
+  icon: hair-ponytaillow.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+
+- name: Mullet
+  image: 09_Hair_Mullet_v03-back.svg
+  icon: hair-mullet.svg
+  moreObjects:
+      - object: 09_Hair_Mullet_v03-front.svg
+  rules:
+    # - rule: hair-with-headgear
+
+
+
+- name: Flattop
+  image: 03_Hair_Flattop_v03.svg
+  icon: hair-flattop.svg
+  rules:
+    #- rule: medium-hair
+    # - rule: hair-with-headgear
+
+- name: Kraftwerk Slicked
+  image: 27_Hair_KraftwerkSlicked_v1.svg
+  icon: hair-KraftwerkSlicked.svg
+
+
+- name: Short dreadlocks
+  image: 04_Hair_DreadlocksShort_v03.svg
+  icon: hair-dreadlocksshort.svg
+  rules:
+    - rule: medium-hair
+
+- name: Medium dreadlocks
+  image: 05_Hair_DreadlocksMedium_v01.svg
+  icon: hair-dreadlocksmedium.svg
+  rules:
+    - rule: big-hair
+
+
+- name: Mohawk
+  image: 01_Hair_Mohawk_v01.svg
+  icon: hair-mohawk.svg
+  rules:
+    - rule: big-hair
+
+
+- name: Afro
+  image: 02_Hair_Afro_v02-back.svg
+  icon: hair-afro.svg
+  moreObjects:
+      - object: 02_Hair_Afro_v02-front.svg
+  rules:
+    - rule: big-hair
+
+
+- name: Bun
+  image: 07_Hair_Bun_v03.svg
+  icon: hair-bun.svg
+  moreObjects:
+      - object: 07_Hair_Bun_v03-front.svg
+  rules:
+    - rule: big-hair
+
+- name: Ponytail
+  image: 21_Hair_Ponytail_v01-back.svg
+  icon: hair-ponytail.svg
+  moreObjects:
+      - object: 21_Hair_Ponytail_v01-front.svg
+  rules:
+    - rule: big-hair
+
+
+- name: Afro Tight
+  image: 26_Hair_AfroTight_v1.svg
+  icon: Hair_AfroTight.svg
+  rules:
+    - rule: big-hair

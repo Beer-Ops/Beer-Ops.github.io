@@ -1,0 +1,282 @@
+## Optinal Rules for headgear: hide-ears, no-big-hair
+
+
+- name: Lederhosen Hat
+  image: 28_HeadGear_LederhosenHat_v1.svg
+  icon: HeadGear_LederhosenHat.svg
+  moreObjects:
+    - object: 28_HeadGear_LederhosenHat_v1-back.svg
+      position: back
+  rules:
+    - rule: no-big-hair
+
+- name: Dirndl Flower Crown
+  image: 29_HeadGear_DirndlFlowerCrown_v1.svg
+  icon: HeadGear_DirndlFlowerCrown.svg
+  rules:
+
+- name: Bucket hat
+  image: 30_HeadGear_AdidasTracksuitBuckethat_v1.svg
+  icon: HeadGear-AdidasTracksuitBuckethat.svg
+  moreObjects:
+    - object: 30_HeadGear_AdidasTracksuitBuckethat_v1-back.svg
+      position: back
+  rules:
+    - rule: hide-ears
+    - rule: no-big-hair
+
+- name: Astronaut Helmet
+  image: 31_HeadGear_AstronautHelmet_v1.svg
+  icon: HeadGear_AstronautHelmet.svg
+  rules:
+    - rule: no-hair
+    - rule: hide-low-facehair
+
+- name: Sombrero
+  image: 32_HeadGear_Sombrero_v1.svg
+  icon: HeadGear_Sombrero.svg
+  moreObjects:
+    - object: 32_HeadGear_Sombrero_v1-back.svg
+      position: back
+  rules:
+    - rule: no-big-hair
+
+- name: Chullo
+  image: 33_HeadGear_Chullo_v1.svg
+  icon: Headgear_Chullo.svg
+  moreObjects:
+    - object: 33_HeadGear_Chullo_v1-back.svg
+      position: back
+  rules:
+    - rule: hide-ears
+    - rule: no-hair
+    #- rule: hide-whiskers
+
+
+
+- name: Headphones
+  image: 16_HeadGear_Headphones_v1.svg
+  icon: headgear-headphones.svg
+  moreObjects:
+      - object: 16_HeadGear_Headphones_v1-back.svg
+        position: middle
+  rules:
+    - rule:
+
+- name: Bow
+  image: 23_HeadGear_Bow_v1.svg
+  icon: headgear-bow.svg
+  rules:
+    - rule:
+
+- name:  Bandana
+  image: 15_HeadGear_Bandana_v1.svg
+  icon: headgear-bandana.svg
+  position: front
+  rules:
+    #- rule: no-big-hair
+
+
+- name: Sweatband
+  image: 19_HeadGear_Sweatband_v1.svg
+  icon: headgear-sweatband.svg
+  position: front
+  rules:
+    #- rule: no-big-hair
+
+
+- name: Crown
+  image: 24_HeadGear_Crown_v1.svg
+  icon: headgear-crown.svg
+  position: front
+  rules:
+    #- rule: no-big-hair
+
+
+- name: Superhero Crown
+  image: 26_HeadGear_SuperheroCrown_v1.svg
+  icon: headgear-superherocrown.svg
+  position: front
+  rules:
+    #- rule: no-big-hair
+
+
+- name: Wizard Hat
+  image: 07_HeadGear_WizardHat_v02.svg
+  icon: headgear-wizardhat.svg
+  moreObjects:
+      - object: 07_HeadGear_WizardHat_v02-back.svg
+        position: back
+  rules:
+    - rule: no-big-hair
+
+- name: Snapback
+  image: 18_HeadGear_Snapback_v1.svg
+  icon: headgear-snapback.svg
+  moreObjects:
+      - object: 18_HeadGear_Snapback_v1-back.svg
+        position: back
+  rules:
+    - rule: hide-ears
+    - rule: no-big-hair
+
+
+- name: Dad cap
+  image: 17_HeadGear_DadCap_v2.svg
+  icon: headgear-dadcap.svg
+  position: front
+  moreObjects:
+      - object: 17_HeadGear_DadCap_v2-back.svg
+        position: back
+  rules:
+    - rule: no-big-hair
+
+
+
+
+
+- name: Newsie Cap
+  image: 20_HeadGear_NewsieCap_v1.svg
+  icon: headgear-newsiecap.svg
+  position: front
+  rules:
+    - rule: no-big-hair
+
+- name: Fedora
+  image: 21_HeadGear_Fedora_v1.svg
+  icon: headgear-fedora.svg
+  position: front
+  rules:
+    - rule: hide-ears
+    - rule: no-big-hair
+
+
+- name: Jester Hat
+  image: 22_HeadGear_JesterHat_v1.svg
+  icon: headgear-jesterhat.svg
+  position: front
+  rules:
+    - rule: hide-ears
+    - rule: no-big-hair
+
+
+- name: Snowboard Helmet
+  image: 02_HeadGear_SnowboardingHelmet_v01.svg
+  icon: headgear-snowbaordinghelmet.svg
+  moreObjects:
+      - object: 02_HeadGear_SnowboardingHelmet_v01-back.svg
+        position: middle
+  rules:
+    - rule: hide-ears
+    - rule: no-big-hair
+
+- name: Cowboy Hat
+  image: 01_HeadGear_CowboyHat_v01.svg
+  icon: headgear-cowboyhat.svg
+  position: front
+  rules:
+    - rule: no-big-hair
+    #- rule: no-medium-hair
+
+- name: Viking Helmet
+  image: 25_HeadGear_VikingHelmet_v4.svg
+  icon: headgear-vikinghelmet.svg
+  position: front
+  moreObjects:
+      - object: 25_HeadGear_VikingHelmet_v4-back.svg
+        position: back
+  rules:
+    - rule: no-big-hair
+    - rule: no-medium-hair
+    - rule: hide-ears
+
+
+
+
+
+- name: Cyclist Helmet
+  image: 04_HeadGear_CyclistHelmet_v01.svg
+  icon: headgear-cyclisthelmet.svg
+  rules:
+    - rule: hide-ears
+    - rule: no-big-hair
+    - rule: no-medium-hair
+
+- name: PJ Cap
+  image: 05_HeadGear_PJSleepingCap_v01.svg
+  icon: headgear-pjsleepingcap.svg
+  rules:
+    - rule: no-big-hair
+    - rule: no-medium-hair
+
+
+- name: Firefighter Hard Hat
+  image: 06_HeadGear_FirefighterHardHat_v01.svg
+  icon: headgear-firefighterhardhat.svg
+  moreObjects:
+      - object: 06_HeadGear_FirefighterHardHat_v01-back.svg
+        position: back
+  rules:
+    - rule: no-hair
+
+
+- name: Bunny suit
+  image: 09_HeadGear_BunnySuit_v01.svg
+  icon: headgear-bunnysuit.svg
+  moreObjects:
+      - object: 09_HeadGear_BunnySuit_v01-back.svg
+        position: back
+  rules:
+    - rule: hide-ears
+    - rule: no-hair
+    - rule: hide-whiskers
+    - rule: hide-low-facehair
+
+
+- name: Armor Helmet
+  image: 11_HeadGear_ArmorHelmet_v02.svg
+  icon: headgear-armorhelmet.svg
+  moreObjects:
+      - object: 11_HeadGear_ArmorHelmet_v02-back.svg
+        position: back
+  rules:
+    - rule: no-hair
+
+
+- name: Hijab
+  image: 10_HeadGear_Hijab_v01.svg
+  icon: headgear-hijab.svg
+  moreObjects:
+      - object: 10_HeadGear_Hijab_v01-back.svg
+        position: back
+  rules:
+    - rule: hide-ears
+    - rule: no-hair
+    - rule: hide-whiskers
+    - rule: no-big-collars
+    - rule: hide-low-facehair
+
+
+- name: Turban
+  image: 12_HeadGear_Turban_v1.svg
+  icon: headgear-turban.svg
+  rules:
+    - rule: no-hair
+
+
+- name: Head Wrap
+  image: 14_HeadGear_HeadWrap_v1.svg
+  icon: headgear-headwrap.svg
+  rules:
+    - rule: no-hair
+    - rule: hide-ears
+
+
+- name: scubahead
+  image: 27_HeadGear_ScubaHead_v01.svg
+  icon: headgear-scubahead.svg
+  rules:
+    - rule: no-hair
+    - rule: hide-ears
+    - rule: hide-whiskers
+    - rule: hide-low-facehair

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>circle-slash</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-Create" transform="translate(-121.000000, -567.000000)" fill="#D8DEE5" fill-rule="nonzero">
+            <g id="Group" transform="translate(88.000000, 530.000000)">
+                <g id="circle-slash" transform="translate(33.000000, 37.000000)">
+                    <path d="M20,0 C8.97142857,0 0,8.97142857 0,20 C0,31.0285714 8.97142857,40 20,40 C31.0285714,40 40,31.0285714 40,20 C40,8.97142857 31.0285714,0 20,0 Z M20,3.71428571 C23.7142857,3.71428571 27.1428571,4.97142857 29.9142857,7.05714286 L7.05714286,29.9142857 C4.97142857,27.1428571 3.71428571,23.7142857 3.71428571,20 C3.71428571,11.0285714 11.0285714,3.71428571 20,3.71428571 Z M20,36.3142857 C16.2857143,36.3142857 12.8571429,35.0571429 10.0857143,32.9714286 L32.9428571,10.1142857 C35.0285714,12.8857143 36.2857143,16.3142857 36.2857143,20.0285714 C36.2857143,29 28.9714286,36.3142857 20,36.3142857 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

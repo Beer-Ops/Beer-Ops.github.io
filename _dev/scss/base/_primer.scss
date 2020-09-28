@@ -1,0 +1,66 @@
+// ---------------------------------------------------------------------
+//  Primer Add Ons
+//  These classes are pulled from Primer
+// ---------------------------------------------------------------------
+
+// ----------------------------------------
+// Padding & Margin Add ons
+// ----------------------------------------
+
+@mixin spacing($property, $size) {
+    #{$property}: $size - 16px;
+
+    @include breakpoint(md) {
+        #{$property}: $size;
+    }
+
+}
+
+.mt-7 {
+	@include spacing(margin-top, 52px);
+}
+.mb-7 {
+	@include spacing(margin-bottom, 52px);
+}
+
+.pt-7 {
+	@include spacing(padding-top, 52px);
+}
+
+.pb-7 {
+	@include spacing(padding-bottom, 52px);
+}
+
+.mt-8 {
+	@include spacing(margin-top, 64px);
+}
+.mb-8 {
+	@include spacing(margin-bottom, 64px);
+}
+
+.pt-8 {
+	@include spacing(padding-top, 64px);
+}
+
+.pb-8 {
+	@include spacing(padding-bottom, 64px);
+}
+
+.mt-9 {
+	@include spacing(margin-top, 96px);
+}
+.mb-9 {
+	@include spacing(margin-bottom, 96px);
+}
+
+.pt-9 {
+	@include spacing(padding-top, 96px);
+}
+
+.pb-9 {
+	@include spacing(padding-bottom, 96px);
+}
+
+.col {
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+name: React on flic button
+on:
+  repository_dispatch:
+    types: [flic-one-click, flic-double-click, flic-hold]
+
+jobs:
+  react-on-flic-button:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: One-Click - Show payload
+      if:  github.event.action == 'flic-one-click'
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Double-Click - Delete all but baseline tag
+      if:  github.event.action == 'flic-double-click'
+      run: ./scripts/delete-all-but-baseline-tag.sh ${{ github.event.repository.owner.login }} ${{ github.event.repository.name }}
+      env:
+        GPR_PAT: ${{ secrets.GPR_PAT }}
+    - name: Hold - Delete all package versions
+      if:  github.event.action == 'flic-hold'
+      run: ./scripts/delete-all-package-versions.sh ${{ github.event.repository.owner.login }} ${{ github.event.repository.name }} octocat-generator
+      env:
+        GPR_PAT: ${{ secrets.GPR_PAT }}

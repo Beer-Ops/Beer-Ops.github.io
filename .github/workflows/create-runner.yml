@@ -1,0 +1,30 @@
+name: Create selfhosted-runner with Issue
+on:
+  issues:
+    types: [opened]
+    
+jobs:
+  react-on-issue:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Create self-hosted runner')
+    steps:
+      - name: Kickoff deployment of self-hosted runner
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
+              body: `👋 @${context.actor} creating a self-hosted runner...`
+            })
+      - name: Kicking off deployment of runner
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.RDP_TOKEN}}
+          script: |
+            github.repos.createDispatchEvent({
+              ...context.repo,
+              event_type: 'create-selfhosted',
+              client_payload: { issue: context.issue.number }
+            })

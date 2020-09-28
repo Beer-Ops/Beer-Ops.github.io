@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>props-fishingrod</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-590.000000, -354.000000)"></g>
+        <g id="Group-132" transform="translate(11.000000, 9.000000)" fill-rule="nonzero">
+            <path d="M9.4161377,15.2128906 L23.84729,0.279174805" id="Path-299" stroke="#FDB854" stroke-linecap="round"></path>
+            <polyline id="Path-301" stroke="#6E49D3" stroke-linecap="round" stroke-linejoin="round" points="10.4660645 16.5480957 24.4665527 2.12402344 24.4669189 12.3931885"></polyline>
+            <path d="M8.69335938,16 L0,25.5671387" id="Path-296" stroke="#4B4F04" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle id="Oval-71" fill="#14473B" opacity="0.990401786" cx="8.5" cy="18.5" r="2.5"></circle>
+            <path d="M8.55749512,19.6053467 C9.10977987,19.6053467 9.55749512,19.1576314 9.55749512,18.6053467 C9.55749512,18.0530619 9.10977987,17.6053467 8.55749512,17.6053467 C8.00521037,17.6053467 7.55749512,18.0530619 7.55749512,18.6053467 C7.55749512,19.1576314 8.00521037,19.6053467 8.55749512,19.6053467 Z" id="Oval-71" fill="#FFE09E"></path>
+            <path d="M8.55285645,18.6352539 L8.18127441,22.0830078" id="Path-297" stroke="#FDA284" stroke-linecap="round"></path>
+            <path d="M6.52929688,23.3903809 L8.2019043,22.0378418" id="Path-298" stroke="#E76537" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M11.4266357,13.154541 L12.9997559,14.7607422" id="Path-300" stroke="#4B4F04" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14.8005371,9.64941406 L16.3736572,11.2556152" id="Path-300" stroke="#4B4F04" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M22.0473633,2.12011719 L23.6204834,3.72631836" id="Path-300" stroke="#4B4F04" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M18.1583252,6.14807129 L19.7314453,7.75427246" id="Path-300" stroke="#4B4F04" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="Group-131" transform="translate(23.000000, 11.000000)">
+                <path d="M1.4710083,2.97937012 L1.4710083,6.35095215" id="Path-302" stroke="#FDB854" stroke-width="0.5" stroke-linecap="round"></path>
+                <path d="M1.47998047,6.93463135 C1.75612284,6.93463135 1.97998047,6.71077372 1.97998047,6.43463135 C1.97998047,6.15848897 1.75612284,5.93463135 1.47998047,5.93463135 C1.20383809,5.93463135 0.979980469,6.15848897 0.979980469,6.43463135 C0.979980469,6.71077372 1.20383809,6.93463135 1.47998047,6.93463135 Z" id="Oval-72" fill="#E76537"></path>
+                <path d="M1.4710083,2.97937012 C1.54604085,4.00170898 1.97062174,4.51700846 2.74475098,4.52526855 C3.51888021,4.53352865 3.92769368,4.13313802 3.97119141,3.32409668" id="Path-303" stroke="#FDB854" stroke-width="0.5"></path>
+                <path d="M4.03277588,4.10168457 C4.30891825,4.10168457 4.53277588,3.87782695 4.53277588,3.60168457 C4.53277588,3.3255422 4.30891825,3.10168457 4.03277588,3.10168457 C3.7566335,3.10168457 3.53277588,3.3255422 3.53277588,3.60168457 C3.53277588,3.87782695 3.7566335,4.10168457 4.03277588,4.10168457 Z" id="Oval-72" fill="#E76537"></path>
+                <path d="M1.4710083,2.97937012 C2.02329305,2.97937012 2.4710083,2.53165487 2.4710083,1.97937012 C2.4710083,1.42708537 2.02329305,0.979370117 1.4710083,0.979370117 C0.918723551,0.979370117 0.471008301,1.42708537 0.471008301,1.97937012 C0.471008301,2.53165487 0.918723551,2.97937012 1.4710083,2.97937012 Z" id="Oval-73" fill="#E76537"></path>
+            </g>
+        </g>
+    </g>
+</svg>

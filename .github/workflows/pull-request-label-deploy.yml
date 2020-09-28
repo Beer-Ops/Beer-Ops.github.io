@@ -1,0 +1,67 @@
+name: Deployment via PR label
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  permission:
+    name: permission check
+    runs-on: ubuntu-latest
+    if: github.actor == github.event.repository.owner.login
+    steps:
+    - name: check permission
+      run: echo permission pass
+  debug:
+    name: _debug
+    needs: permission
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'debug')
+    steps:
+    - name: context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+  deployment:
+    name: Deployment via label
+    needs: permission
+    runs-on: ubuntu-latest
+    if: |
+        github.event.label.name == 'azure' ||
+        github.event.label.name == 'gcp' ||
+        github.event.label.name == 'aws'
+    steps:
+    - name: ACK deployment request
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '👋 @' + context.actor + ', deployment request for ${{ github.event.label.name }} received ...'
+          })
+    - name: Kicking off deployment
+      uses: actions/github-script@0.5.0
+      env:
+        cloud: ${{ github.event.label.name }}
+        customer: ${{ github.event.pull_request.head.ref }}
+      with:
+        github-token: ${{secrets.GPR_PAT}}
+        script: |
+          const { cloud, customer } = process.env;
+          let customerNormalized = customer.replace(/[^a-zA-Z0-9_\-]*/g, '')
+          let gprUrl='docker.pkg.github.com/'+context.repo.owner.toLowerCase()+'/'+context.repo.repo.toLowerCase()+'/octocat-generator-docker:'+customerNormalized
+          github.repos.createDeployment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref:  customerNormalized,
+            task: 'deploy-to-' + cloud,
+            auto_merge: false,
+            required_contexts: [],
+            environment: cloud + '-' + customerNormalized + '-' + context.issue.number,
+            description: 'Production environment for ' + customer + ' on ' + cloud,
+            payload:  { customer: customer, cloud: cloud, gprUrl: gprUrl, issue: context.issue.number, customerNormalized: customerNormalized },
+            production_environment: false,
+            transient_environment: false
+          })

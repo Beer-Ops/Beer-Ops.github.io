@@ -1,0 +1,53 @@
+name: Build Jekyll website and push to S3
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-sync:
+    name: Build and sync to S3
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - name: Create GitHub deployment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -s -H "Authorization: Token ${GITHUB_TOKEN}" -X POST \
+          -d '{ "required_contexts": [], "auto_merge": false, "ref": "'${GITHUB_SHA}'", "environment": "S3-Production"}' \
+          https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments | jq '.id' >> deployment_id
+      - name: Build Jekyll website
+        run: |
+          gem install bundler
+          bundle install
+          bundle exec jekyll build
+      - uses: jakejarvis/s3-sync-action@master
+        env:
+          SOURCE_DIR: "./_site"
+          AWS_REGION: "eu-west-1"
+          AWS_S3_BUCKET: "octogenerator-demo"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Update GitHub deployment status to success
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          deployment_id=$(cat deployment_id)
+          curl -s -H "Authorization: Token ${GITHUB_TOKEN}" \
+          -H "Accept: application/vnd.github.flash-preview+json" -X POST \
+          -d '{ "state": "success", "environment_url": "http://octogenerator-demo.s3-website-eu-west-1.amazonaws.com" }' \
+          https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments/${deployment_id}/statuses
+      - name: Update GitHub deployment status to failure
+        if: failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          deployment_id=$(cat deployment_id)
+          curl -s -H "Authorization: Token ${GITHUB_TOKEN}" -X POST\
+          -d '{ "state": "failure"}' \
+          https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments/${deployment_id}/statuses

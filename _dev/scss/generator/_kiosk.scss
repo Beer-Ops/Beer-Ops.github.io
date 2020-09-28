@@ -1,0 +1,98 @@
+// ---------------------------------------------------------------------
+//  Kiosk Only Styles
+// ---------------------------------------------------------------------
+
+
+.template-kiosk-octocat-generator.kiosk.page-loaded {
+    margin-bottom: 0 !important;
+}
+
+
+body.template-kiosk-homepage {
+    overflow-y: hidden;
+
+    &:hover {
+        overflow-y: scroll;
+    }
+}
+
+body.kiosk {
+    // cursor: none !important;
+    //
+    // *  {
+    //     cursor: none !important;
+    // }
+
+    // #ui-wrapper {
+    //     @media(min-height: 600px) {
+    //         padding: 36px 0 24px;
+    //     }
+    // }
+
+    // #ui-wrapper {
+    //     @media(min-height: 600px) {
+    //         padding: 36px 0 24px;
+    //     }
+    // }
+
+
+    .ha {
+        position: fixed;
+        bottom: 0;
+        z-index: 10000;
+    }
+
+    #download-ocotocat {
+        display: none;
+    }
+
+    // #control-panel {
+    //     cursor: none !important;
+    //
+    //     *,
+    //     .category-tile  {
+    //         cursor: none !important;
+    //
+    //         &:hover {
+    //             cursor: none !important;
+    //         }
+    //
+    //         #js-draggable:hover {
+    //             cursor: none !important;
+    //         }
+    //
+    //         #js-draggable.dragging {
+    //             //background: red;
+    //             cursor: none !important;
+    //         }
+    //     }
+    // }
+
+    // #export-modal {
+    //     height: 60%;
+    // }
+
+
+    .object-preview {
+
+        &.is-active {
+            background: darken($off-white, 10%);
+        }
+
+    }
+
+    // #object-list {
+    //     padding-bottom: 40px;
+    // }
+
+    // .kiosk-spacer {
+    //     display: block;
+    //     min-height: 40px;
+    //     height: 40px;
+    // }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------

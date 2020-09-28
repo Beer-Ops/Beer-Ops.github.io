@@ -1,0 +1,155 @@
+// ---------------------------------------------------------------------
+//  Dropdown Styles
+// ---------------------------------------------------------------------
+
+$dropdown-height: 44px;
+$dropdown-bg: darken($white, 2%);
+
+
+$dropdown-text-color: $black;
+$dropdown-icon-color: $black;
+
+$dropdown-hover-bg: darken($white, 6%);;
+$dropdown-hover-text-color: $black;
+
+
+.dropdown {
+    position: relative;
+    z-index: 2;
+    max-width: 360px;
+    width: 100%;
+    cursor: pointer;
+    min-height: $dropdown-height;
+}
+
+
+// ----------------------------------------
+// Icon
+// ----------------------------------------
+
+.dropdown__icon {
+    position: absolute;
+    height: $dropdown-height;
+    top: 0;
+    right: 0;
+    width: 44px;
+    z-index: 4;
+
+    svg {
+        display: block;
+        fill: $black;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+
+// ----------------------------------------
+// List
+// ----------------------------------------
+
+.dropdown__list {
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    max-height: $dropdown-height;
+    background: $dropdown-bg;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    color: $dropdown-text-color;
+    transition: max-height $transition;
+
+    > * {
+        max-height: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height $transition;
+    }
+
+    > * > * {
+        display: block;
+        line-height: 1;
+        padding: 16px 18px;
+        transition: all $transition;
+    }
+}
+
+
+// ----------------------------------------
+// Is Active Styles
+// ----------------------------------------
+
+.dropdown__list .is-active {
+   max-height: $dropdown-height;
+   opacity: 1;
+   transition: all $transition;
+
+   &:hover {
+        color: $dropdown-hover-text-color;
+        background: $dropdown-hover-bg;
+    }
+}
+
+
+// ----------------------------------------
+// Dropdown Is Active
+// ----------------------------------------
+.dropdown.is-active {
+    z-index: 4;
+
+    .dropdown__list {
+        max-height: 1000px;
+
+        > * {
+            max-height: $dropdown-height;
+        }
+
+        > * > *:hover {
+            color: $dropdown-hover-text-color;
+            background: $dropdown-hover-bg;
+        }
+    }
+
+
+}
+
+@include start-at($medium) {
+    .dropdown.dropdown--before--md {
+        max-width: 100%;
+        background: transparent;
+
+        .dropdown__list {
+            position: relative;
+            max-height: none;
+            background: transparent;
+            box-shadow: none;
+            display: flex;
+
+            > * {
+               max-height: none;
+            }
+
+           > * > * {
+               height: auto;
+               padding: 2px 0;
+               display: block;
+
+                &:hover {
+                    background: transparent;
+                }
+           }
+        }
+
+        .dropdown__list .is-active {
+            max-height: auto;
+            background: $dropdown-bg;
+        }
+
+        .dropdown__list > *:first-child,
+        .dropdown__icon {
+            display: none;
+        }
+    }
+}

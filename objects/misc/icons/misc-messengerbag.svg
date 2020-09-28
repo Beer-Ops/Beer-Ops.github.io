@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>misc-messengerbag</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-649.000000, -473.000000)"></g>
+        <g id="Group-116" transform="translate(12.000000, 12.000000)" fill-rule="nonzero">
+            <rect id="Rectangle-62" fill="#000000" x="2" y="12" width="20" height="12" rx="1"></rect>
+            <path d="M20,12 L20,16 C20,17.6568542 18.6568542,19 17,19 L7,19 C5.34314575,19 4,17.6568542 4,16 L4,12" id="Rectangle-63" stroke="#FFFFFF"></path>
+            <path d="M19.5,19.5024015 C19.7186584,19.5004789 20.1589661,19.5000059 20.5,19.5024015 L20.5,23.5024015 C20.5,23.7785439 20.2761424,24.0024015 20,24.0024015 C19.7238576,24.0024015 19.5,23.7785439 19.5,23.5024015 L19.5,19.5024015 Z M4.5,23.5024015 C4.5,23.7785439 4.27614237,24.0024015 4,24.0024015 C3.72385763,24.0024015 3.5,23.7785439 3.5,23.5024015 C3.5,20.8357348 3.5,19.5024015 3.5,19.5024015 C3.77862549,19.5004789 4.17163086,19.498129 4.5,19.5024015 C4.5,19.5024015 4.5,20.8357348 4.5,23.5024015 Z" id="Rectangle-63" fill="#DDDDDD" transform="translate(12.000000, 21.751201) scale(1, -1) translate(-12.000000, -21.751201) "></path>
+            <path d="M16,21.0003563 C16.5485992,20.9994255 17.3386841,21.0006463 18,21.0003563 L18,23.0003563 C18,23.5526411 17.5522847,24.0003563 17,24.0003563 C16.4477153,24.0003563 16,23.5526411 16,23.0003563 L16,21.0003563 Z M8,23.0003563 C8,23.5526411 7.55228475,24.0003563 7,24.0003563 C6.44771525,24.0003563 6,23.5526411 6,23.0003563 L6,21.0003563 C6.63633728,21.0006157 7.3276062,21.0009362 8,21.0003563 L8,23.0003563 Z" id="Rectangle-63" fill="#979797" transform="translate(12.000000, 22.500178) scale(1, -1) translate(-12.000000, -22.500178) "></path>
+            <path d="M11,13 L13,13 C13.5522847,13 14,13.4477153 14,14 L14,24 L10,24 L10,14 C10,13.4477153 10.4477153,13 11,13 Z" id="Rectangle-64" fill="#D0021B"></path>
+            <polygon id="Rectangle-66" fill="#000000" points="10 19.5006104 14 19.5006104 14 21 10 21"></polygon>
+            <path d="M2,12.7545166 L2,10 C2,4.4771525 6.4771525,0 12,0 C17.5228475,0 22,4.4771525 22,10 L22,12.7545166" id="Rectangle-65" stroke="#000000" stroke-linecap="round"></path>
+            <path d="M5.97988712,2.01441449 C7.65464058,0.749875509 9.73974888,0 12,0 C14.2496821,0 16.3258556,0.742879048 17.9965925,1.99670926" id="Rectangle-65" stroke="#939393" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M1.99572754,10.9334717 L1.99572754,10.5806885" id="Path-222" stroke="#D0021B" stroke-linecap="round"></path>
+            <path d="M21.9957275,10.9334717 L21.9957275,10.5806885" id="Path-222" stroke="#D0021B" stroke-linecap="round"></path>
+            <path d="M1.99572754,12.9334717 L1.99572754,12.5806885" id="Path-222" stroke="#D0021B" stroke-linecap="round"></path>
+            <path d="M21.9957275,12.9334717 L21.9957275,12.5806885" id="Path-222" stroke="#D0021B" stroke-linecap="round"></path>
+            <path d="M1.99572754,11.9334717 L1.99572754,11.5806885" id="Path-222" stroke="#939393" stroke-linecap="square"></path>
+            <path d="M21.9957275,11.9334717 L21.9957275,11.5806885" id="Path-222" stroke="#939393" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

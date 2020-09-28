@@ -1,0 +1,15 @@
+<div class="object-panel-wrap" id="cp-face">
+    <div class="object-panel object-panel__colors" id="face-color">
+        <div class="object-panel__inner">
+
+            {% for item in site.data.faceColors %}
+            <div class="color-swatch-wrap{% if item.isActive %} is-active{% endif %}">
+                <span class="color-swatch" data-color="#{{ item.face }}" data-color-nose="#{{ item.nose }}"><span></span></span>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

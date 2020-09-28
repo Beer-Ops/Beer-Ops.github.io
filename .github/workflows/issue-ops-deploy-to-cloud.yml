@@ -1,0 +1,61 @@
+on:
+  issue_comment:
+    types: [created]
+name: React on issue comments
+jobs:
+  react-on-issue-comment-not-approved:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Deploy Octocat Generator on') && startsWith(github.event.comment.body, '/approve') && github.event.issue.user.login == github.event.comment.user.login
+    steps:
+      - name: Need approval from somebody else
+        uses: actions/github-script@0.5.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 @' + context.actor + ', you cannot approve your own deployment, somebody else has to add an ```/approve``` comment.'
+            })
+  react-on-issue-comment-approved:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Deploy Octocat Generator on') && startsWith(github.event.comment.body, '/approve') && github.event.issue.user.login != github.event.comment.user.login
+    steps:
+      - name: Approval granted
+        uses: actions/github-script@0.5.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 @' + context.actor + ', approval granted, creating deployment request ...'
+            })
+      - name: Kicking off deployment
+        uses: actions/github-script@0.5.0
+        env:
+          title: ${{ github.event.issue.title }}
+          body: ${{ github.event.issue.body }}
+        with:
+          github-token: ${{secrets.GPR_PAT}}
+          script: |
+            const { title, body } = process.env;
+            let cloud = title.match(/^Deploy Octocat Generator on (.*)/)[1]
+            let customer = body.match(/^Customer: (.*)/)[1]
+            let customerNormalized = customer.replace(/[^a-zA-Z0-9_\-]*/g, '')
+            let gprUrl='docker.pkg.github.com/'+context.repo.owner.toLowerCase()+'/'+context.repo.repo.toLowerCase()+'/octocat-generator-docker:'+customerNormalized
+            github.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref:  customerNormalized,
+              task: 'deploy-to-' + cloud,
+              auto_merge: false,
+              required_contexts: [],
+              environment: cloud + '-' + customerNormalized + '-' + context.issue.number,
+              description: 'Production environment for ' + customer + ' on ' + cloud,
+              payload:  { customer: customer, cloud: cloud, gprUrl: gprUrl, issue: context.issue.number, customerNormalized: customerNormalized },
+              production_environment: false,
+              transient_environment: false
+            })

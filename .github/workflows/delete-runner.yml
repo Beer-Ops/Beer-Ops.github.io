@@ -1,0 +1,39 @@
+on:
+  issues:
+    types: [closed]
+name: Destroy self-hosted runner
+jobs:
+  destroy-from-cloud:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Create self-hosted runner')
+    steps:
+      - name: Destroying deployment
+        uses: actions/github-script@v2
+        env:
+          title: ${{ github.event.issue.title }}
+          body: ${{ github.event.issue.body }}
+          labels: ${{ toJSon(github.event.issue.labels) }}
+        with:
+          github-token: ${{secrets.RDP_TOKEN}}
+          script: |
+            const { title, body, labels } = process.env;
+            const existingLabels = JSON.parse(labels)
+            const label = "deployed"
+            if (!existingLabels.some(({ name: existingLabelName }) => existingLabelName === label)) {
+              github.issues.createComment({
+                ...context.repo,
+                issue_number: context.issue.number,
+                body: '```'+ label + '``` label not set, so deployment did not happen, no need to destroy environment ...'
+              })
+              return
+            }
+            github.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
+              body: `👋 @${context.actor}, destroying the self-hosted runner now...`
+            })
+            github.repos.createDispatchEvent({
+              ...context.repo,
+              event_type: 'destroy-selfhosted',
+              client_payload: { issue: context.issue.number }
+            })

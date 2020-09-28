@@ -1,0 +1,21 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ],
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "Octocat Generator",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}

@@ -1,0 +1,110 @@
+// ---------------------------------------------------------------------
+//  Rules
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Primer
+// ----------------------------------------
+
+#control-panel {
+
+    &.no-big-hair {
+        .object-preview.big-hair span {
+            border: 1px solid red;
+            //border: 1px solid red;
+        }
+    }
+    &.no-medium-hair {
+        .object-preview.medium-hair span {
+            border: 1px solid red;
+        }
+    }
+    &.no-hair {
+        [data-category="hair"].object-preview span {
+            border: 1px solid red;
+        }
+    }
+
+    &.big-hair {
+        .object-preview.no-big-hair span,
+        .object-preview.no-hair span {
+            border: 1px solid red;
+        }
+    }
+
+    &.medium-hair {
+        .object-preview.no-medium-hair span,
+        .object-preview.no-hair span {
+            border: 1px solid red;
+        }
+    }
+
+    &.no-pants {
+        [data-category="bottoms"].object-preview  span {
+            border: 1px solid red;
+        }
+    }
+
+    &.no-xl-pants {
+        .object-preview.xl-pants span {
+            border: 1px solid red;
+        }
+    }
+
+    &.no-big-collars {
+        .object-preview.big-collar span {
+            border: 1px solid red;
+        }
+    }
+
+    &.no-back-facialhair {
+        .object-preview.back-facial-hair span {
+            border: 1px solid red;
+        }
+    }
+
+    &.hair {
+        .object-preview.no-hair span {
+            border: 1px solid red;
+        }
+    }
+
+    &.back-facial-hair {
+        .object-preview.no-back-facialhair span {
+            border: 1px solid red;
+        }
+    }
+
+    &.xl-pants {
+        .object-preview.no-xl-pants span,
+        .object-preview.no-pants span {
+            border: 1px solid red;
+        }
+    }
+
+    &.xxl-pants {
+        .object-preview.no-xxl-pants span,
+        .object-preview.no-pants span {
+            border: 1px solid red;
+        }
+    }
+
+    &.no-xxl-pants {
+        .object-preview.xxl-pants span {
+            border: 1px solid red;
+        }
+    }
+
+    &.bottoms {
+        .object-preview.no-pants span {
+            border: 1px solid red;
+        }
+    }
+
+    &.no-shorts {
+        .object-preview.shorts span {
+            border: 1px solid red;
+        }
+    }
+}

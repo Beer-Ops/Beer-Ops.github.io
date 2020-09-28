@@ -1,0 +1,99 @@
+// ---------------------------------------------------------------------
+//  Octocat Generator
+// ---------------------------------------------------------------------
+
+
+#octocat-generator {
+    background: $off-white;
+    background: $white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+
+    &.is-ready {
+        opacity: 1;
+    }
+
+    #artboard {
+        position: relative;
+        z-index: 4;
+        width: 100%;
+        min-height: 260px;
+
+        svg,
+        img {
+            display: block;
+            width: auto;
+            margin: 0 auto;
+            height: 100%;
+            max-width: 100%;
+        }
+
+        .artboard__inner {
+            height: 100%;
+            display: flex;
+            flex-grow: 1;
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            margin-top: 16px;
+
+            @include stop-at($panel-bp){
+                margin-top: 68px;
+                width: 96%;
+                margin-left: -30px;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+#export {
+    display: none;
+
+}
+
+.isEDGE {
+    #export {
+        display: block;
+
+        canvas {
+            display: none;
+        }
+    }
+}
+
+
+// ----------------------------------------
+// BG Area
+// ----------------------------------------
+
+#bg-area {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.50);
+    background-image: linear-gradient(-180deg, white 50%, #f4f6f8 100%);
+    opacity: 1;
+    z-index: -1;
+    //background: rgba(0,0,0, 0.8);
+
+}

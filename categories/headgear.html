@@ -1,0 +1,34 @@
+<div class="object-panel-wrap" id="cp-headgear">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+            <div class="remove-category" data-category="headgear">
+                <p class="sr-only">Remove object</p>
+            </div>
+
+            {% for item in site.data.headgear %}
+
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}} {% endfor %}" data-category="headgear" data-classes="{% if item.rules %}{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}{% endif %}">
+                <span>
+                    <img class="preview" src="/objects/headgear/icons/{{ item.icon }}" alt="{{ item.name }}" />
+
+                    <div class="object headgear{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="headgear{% if item.position %}-{{ item.position }}{% endif %}-holder" >
+                        {% include_relative objects/headgear/{{ item.image }} %}
+                    </div>
+
+                    {% if item.moreObjects %}
+                    {% for object in item.moreObjects %}
+                    <div class="object headgear{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="headgear{% if object.position %}-{{ object.position }}{% endif %}-holder">
+                        {% include_relative objects/headgear/{{ object.object }} %}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </span>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

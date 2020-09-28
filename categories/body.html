@@ -1,0 +1,13 @@
+<div class="object-panel-wrap is-active" id="cp-body">
+    <div class="object-panel object-panel__colors" id="body-color">
+        <div class="object-panel__inner">
+            {% for item in site.data.bodyColors %}
+            <div class="color-swatch-wrap{% if item.isActive %} is-active{% endif %}">
+                <span class="color-swatch{% if item.isActive %} last-item{% endif %}" data-color="#{{ item.primary }}" data-second-color="#{{ item.underside }}" data-third-color="#{{ item.suctions }}"><span></span></span>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

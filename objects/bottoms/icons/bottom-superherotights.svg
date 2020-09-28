@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>bottom-superherotights</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-354.000000, -177.000000)"></g>
+        <g id="Group-14" transform="translate(14.000000, 10.000000)" fill-rule="nonzero">
+            <polygon id="Combined-Shape" stroke="#7B40B3" stroke-width="0.771552" fill="#7B40B3" stroke-linejoin="round" points="9.06785752 10.960841 5.98735927 28.395765 0.971906287 26.8730799 3.3993471 1.91520837 16.1919551 1.91520837 18.5848997 26.8730799 13.5694468 28.395765 10.4889485 10.960841"></polygon>
+            <path d="M9.66928694,10.531946 C9.06560494,8.45649643 8.51250298,7.8245465 7.17072726,6.80569757 C6.27621011,6.12646495 4.89181603,5.52668214 3.01754501,5.00634915 L3.3993471,1.91520837 L16.1919551,1.91520837 L16.4992298,5.00634915 C15.1581448,5.36044972 14.0161495,5.81127362 13.0732441,6.35882085 C11.6588859,7.1801417 10.4998766,8.45649643 9.66928694,10.531946 Z" id="Combined-Shape" stroke="#94A7EF" stroke-width="0.771552" fill="#94A7EF" stroke-linejoin="round"></path>
+            <path d="M3.14711216,1.24595653 C11.9531399,1.24595653 16.3561538,1.24595653 16.3561538,1.24595653" id="Line-7" stroke="#F9B63C" stroke-width="1.543104" stroke-linecap="round"></path>
+            <path d="M2.55272393,5.01684814 C5.23838288,5.01684814 9.71096863,7.708869 9.71096863,10.9983693" id="Path-20" stroke="#F9B63C" stroke-width="0.96444" stroke-linecap="round" stroke-linejoin="bevel"></path>
+            <path d="M16.978403,5.01684814 C14.2927441,5.01684814 9.82015832,7.708869 9.82015832,10.9983693" id="Path-20" stroke="#F9B63C" stroke-width="0.96444" stroke-linecap="round" stroke-linejoin="bevel"></path>
+            <path d="M0.632463568,26.9852287 L6.23246357,28.5115445" id="Line-8" stroke="#F9B63C" stroke-width="1.543104" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M13.3473466,26.9852287 L18.9473466,28.5115445" id="Line-8" stroke="#F9B63C" stroke-width="1.543104" stroke-linecap="round" stroke-linejoin="round" transform="translate(16.147347, 27.748387) scale(-1, 1) translate(-16.147347, -27.748387) "></path>
+        </g>
+    </g>
+</svg>

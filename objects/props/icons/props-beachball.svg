@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="48px" viewBox="0 0 49 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>props-beachball</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-709.000000, -354.000000)"></g>
+        <g id="Beach-Ball" transform="translate(24.434807, 24.000000) rotate(-100.000000) translate(-24.434807, -24.000000) translate(12.434807, 13.000000)">
+            <circle id="Oval-46-Copy" fill="#FFDC8F" fill-rule="nonzero" cx="11.559689" cy="11.281311" r="10.2557373"></circle>
+            <g id="Group-135" transform="translate(-0.000000, 0.000000)">
+                <g id="Group-134" transform="translate(6.463105, 0.702265)">
+                    <g id="Group-133" transform="translate(0.256393, 0.000000)" fill="#F5C700">
+                        <path d="M4.83792374,0.321743712 C6.31539409,0.321743712 7.71989356,0.634169193 8.98896071,1.19655871 L4.83860179,10.577481 L0.688020595,1.19605633 C1.95679045,0.633983138 3.36089338,0.321743712 4.83792374,0.321743712 Z" id="Combined-Shape"></path>
+                    </g>
+                    <g id="Group-133" transform="translate(9.665909, 12.829071) rotate(120.000000) translate(-9.665909, -12.829071) translate(5.165909, 7.329071)" fill="#2AB192">
+                        <path d="M0.688020595,1.19605633 C1.95679045,0.633983138 3.36089338,0.321743712 4.83792374,0.321743712 C6.31539409,0.321743712 7.71989356,0.634169193 8.98896071,1.19655871 L4.83860179,10.577481 L0.688020595,1.19605633 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+                <g id="Group-133" transform="translate(7.329403, 14.117508) rotate(-120.000000) translate(-7.329403, -14.117508) translate(2.829403, 8.617508)" fill="#DC64DC">
+                    <path d="M0.688020595,1.19605633 C1.95679045,0.633983138 3.36089338,0.321743712 4.83792374,0.321743712 C6.31539409,0.321743712 7.71989356,0.634169193 8.98896071,1.19655871 L4.83860179,10.577481 L0.688020595,1.19605633 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+            <circle id="Oval-46-Copy" stroke="#F5C700" stroke-width="0.5" fill="#FFDC8F" fill-rule="nonzero" cx="11.559689" cy="11.281311" r="2.18309994"></circle>
+            <path d="M17.4685676,19.6647886 C18.8236202,17.9263818 19.6308526,15.7400237 19.6308526,13.3651264 C19.6308526,7.70103908 15.0392026,3.10938909 9.37511529,3.10938909 C7.17490821,3.10938909 5.13652372,3.80223397 3.46623672,4.98164884 C5.34296024,2.57398676 8.270499,1.02557373 11.559689,1.02557373 C17.2237763,1.02557373 21.8154263,5.61722372 21.8154263,11.281311 C21.8154263,14.7451913 20.0981719,17.8079852 17.4685676,19.6647886 Z" id="Combined-Shape" fill="#FDE9BC" fill-rule="nonzero" opacity="0.505189732"></path>
+        </g>
+    </g>
+</svg>

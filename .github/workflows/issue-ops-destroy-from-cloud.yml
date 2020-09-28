@@ -1,0 +1,47 @@
+on:
+  issues:
+    types: [closed]
+name: Destroy from cloud
+jobs:
+  destroy-from-cloud:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Deploy Octocat Generator on')
+    steps:
+      - name: Destroying deployment
+        uses: actions/github-script@0.5.0
+        env:
+          title: ${{ github.event.issue.title }}
+          body: ${{ github.event.issue.body }}
+          labels: ${{ toJSon(github.event.issue.labels) }}
+        with:
+          github-token: ${{secrets.GPR_PAT}}
+          script: |
+            const { title, body, labels } = process.env;
+            const existingLabels = JSON.parse(labels)
+            const label = "deployed"
+            if (!existingLabels.some(({ name: existingLabelName }) => existingLabelName === label)) {
+              github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '```'+ label + '``` label not set, so deployment did not happen, no need to destroy environment ...'
+              })
+              return
+            }
+
+            let cloud = title.match(/^Deploy Octocat Generator on (.*)/)[1]
+            let customer = body.match(/^Customer: (.*)/)[1]
+            let customerNormalized = customer.replace(/[^a-zA-Z0-9_\-]*/g, '')
+            let gprUrl='docker.pkg.github.com/'+context.repo.owner.toLowerCase()+'/'+context.repo.repo.toLowerCase()+'/octocat-generator-docker:'+customerNormalized
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 @' + context.actor + ', destroying deployment in ' + cloud + ' for ' + customer + ' (docker image ' + gprUrl + ' ) now ...'
+            })
+            github.repos.createDispatchEvent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event_type: 'destroy-in-'+cloud.toLowerCase(),
+              client_payload: { customer: customer, cloud: cloud, gprUrl: gprUrl, issue: context.issue.number }
+            })

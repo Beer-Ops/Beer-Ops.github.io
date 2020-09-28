@@ -1,0 +1,89 @@
+## Optinal Rules for mouths:
+
+- name: Neutral
+  image: 07_MouthExpress_Neutral.svg
+  icon: 07_MouthExpress_Neutral.svg
+  isActive: true
+  rules:
+    - rule:
+
+
+- name: Happy Closed
+  image: 01_MouthExpress_HappyClosed.svg
+  icon: 01_MouthExpress_HappyClosed.svg
+  rules:
+    - rule:
+
+- name: Happy Open
+  image: 02_MouthExpress_HappyOpen.svg
+  icon: 02_MouthExpress_HappyOpen.svg
+  rules:
+    - rule: no-back-facialhair
+
+- name: Sad
+  image: 03_MouthExpress_Sad.svg
+  icon: 03_MouthExpress_Sad.svg
+  rules:
+    - rule:
+
+- name: Confused
+  image: 04_MouthExpress_Confused.svg
+  icon: 04_MouthExpress_Confused.svg
+  rules:
+    - rule: no-back-facialhair
+
+- name: Excited Open
+  image: 05_MouthExpress_ExcitedOpen.svg
+  icon: 05_MouthExpress_ExcitedOpen.svg
+  rules:
+    #- rule: no-back-facialhair
+
+- name: Excited Closed
+  image: 06_MouthExpress_ExcitedClosed.svg
+  icon: 06_MouthExpress_ExcitedClosed.svg
+  position: back
+  rules:
+    - rule:
+
+
+- name: Express
+  image: 08_MouthExpress_Tired.svg
+  icon: 08_MouthExpress_Tired.svg
+  rules:
+    - rule:
+
+- name: Chillin
+  image: 09_MouthExpress_Chillin.svg
+  icon: 09_MouthExpress_Chillin.svg
+  rules:
+    - rule:
+
+- name: Angry
+  image: 10_MouthExpress_Angry.svg
+  icon: 10_MouthExpress_Angry.svg
+  rules:
+    - rule:
+
+- name: Heart Eyes
+  image: 11_MouthExpress_HeartEyes.svg
+  icon: 11_MouthExpress_HeartEyes.svg
+  rules:
+    - rule: no-back-facialhair
+
+- name: Starstruck
+  image: 12_MouthExpress_Starstruck.svg
+  icon: 12_MouthExpress_Starstruck.svg
+  rules:
+    - rule: no-back-facialhair
+
+- name: Zany
+  image: 13_MouthExpress_Zany.svg
+  icon: 13_MouthExpress_Zany.svg
+  rules:
+    - rule: no-back-facialhair
+
+- name: Winking
+  image: 15_MouthExpress_Winking.svg
+  icon: 15_MouthExpressions_Winking.svg
+  rules:
+    - rule:

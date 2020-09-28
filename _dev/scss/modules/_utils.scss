@@ -1,0 +1,72 @@
+// ---------------------------------------------------------------------
+//  Utility Classes
+// ---------------------------------------------------------------------
+
+.has-accent {
+
+    &:after {
+        content: "";
+        width: 100px;
+        height: 2px;
+        display: block;
+        background: $brand;
+        margin: 20px auto;
+    }
+}
+
+
+// ----------------------------------------
+// Text
+// ----------------------------------------
+
+.text-center {
+    text-align: center;
+
+    p, img, .text-thin {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.text-thin {
+    max-width: 560px;
+}
+
+.text-brand {
+    color: $brand;
+}
+
+.text-white {
+    color: $white;
+}
+
+.text-light {
+    color: $gray;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+
+// ----------------------------------------
+// Backgrounds
+// ----------------------------------------
+
+.bg-brand {
+    background: $brand;
+}
+
+.bg-light {
+    background: $gray-light;
+}
+
+
+.sr-only,
+.screen-reader-text {
+    @include visually-hidden;
+}

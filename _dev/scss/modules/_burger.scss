@@ -1,0 +1,81 @@
+// ---------------------------------------------------------------------
+//  Burger Styles
+// ---------------------------------------------------------------------
+
+$burger-width: 22px;
+$burger-height: 14px;
+$burger-color: $white;
+$burger-bg-color: transparent;
+
+
+#menu-toggle {
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	right: 0;
+	z-index: 11;
+	width: 44px;
+	height: 44px;
+	transition: opacity $trans;
+	align-self: center;
+	display: flex;
+	justify-content: flex-end;
+
+	@include start-at ($header-breakpoint) {
+		display: none;
+	}
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+}
+
+#menu-toggle > * {
+	width: $burger-width;
+	height: $burger-height;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	margin: 0 auto;
+	right: 0;
+
+	> * {
+		position: absolute;
+		display: block;
+		height: 1px;
+		width: 100%;
+		background-color: $burger-color;
+		margin: 0 auto;
+		transition: all $trans;
+    }
+}
+
+.burger-top { top: 0; }
+.burger-middle { top: 50%; transform: translate3d(0, -50%, 0); }
+.burger-bottom { bottom: 0; }
+
+
+// ----------------------------------------
+// Active Styles
+// ----------------------------------------
+
+.menu-is-open #menu-toggle > * {
+	.burger-top {
+		top: 50%;
+		margin-top: -1px;
+		transform: translate3d(0, -50%, 0) rotate(45deg);
+	}
+
+	.burger-middle {
+		opacity: 0;
+	}
+
+	.burger-bottom {
+		bottom: 50%;
+		//margin-top: -1px;
+		transform: translate3d(0, -50%, 0) rotate(-45deg);
+	}
+}

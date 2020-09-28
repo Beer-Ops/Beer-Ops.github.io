@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Eyewear-eyeglassesalieneyes</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-295.000000, -295.000000)"></g>
+        <g id="Group-34" transform="translate(10.000000, 16.000000)" fill-rule="nonzero">
+            <path d="M4.8807373,13.69104 C5.4249827,14.4838994 7.25402364,17.0882496 10.0292969,16.0754395 C12.8045701,15.0626293 12.2068236,12.0224179 11.9979248,10.8968506 C11.6204834,8.86315918 9.32494393,3.15608188 6.19763184,1.18945313 C4.41100136,-0.0861795503 2.77016272,1.50187408 2.5748291,5.06481934 C2.47246508,6.93197052 2.95273631,10.8823188 4.8807373,13.69104 Z" id="Path-71" stroke="#81DA45" fill="#2A1958"></path>
+            <path d="M1,6 L2.82543945,6 L2.82543945,8 L1,8 C0.44771525,8 6.76353751e-17,7.55228475 0,7 L0,7 C-6.76353751e-17,6.44771525 0.44771525,6 1,6 Z" id="Rectangle-26" fill="#81DA45"></path>
+            <path d="M25.8393555,6 L27.6647949,6 L27.6647949,8 L25.8393555,8 C25.2870707,8 24.8393555,7.55228475 24.8393555,7 L24.8393555,7 C24.8393555,6.44771525 25.2870707,6 25.8393555,6 Z" id="Rectangle-26" fill="#81DA45" transform="translate(26.252075, 7.000000) scale(-1, 1) translate(-26.252075, -7.000000) "></path>
+            <path d="M17.8807373,13.69104 C18.4249827,14.4838994 20.2540236,17.0882496 23.0292969,16.0754395 C25.8045701,15.0626293 25.2068236,12.0224179 24.9979248,10.8968506 C24.6204834,8.86315918 22.3249439,3.15608188 19.1976318,1.18945313 C17.4110014,-0.0861795503 15.7701627,1.50187408 15.5748291,5.06481934 C15.4724651,6.93197052 15.9527363,10.8823188 17.8807373,13.69104 Z" id="Path-71" stroke="#81DA45" fill="#2A1958" transform="translate(20.380542, 8.529473) scale(-1, 1) translate(-20.380542, -8.529473) "></path>
+            <path d="M15.6803854,11.2640757 C15.6275933,11.1307401 15.5608806,11.0044332 15.4820397,10.8869477 C15.123082,10.3520434 14.5127177,10 13.8201294,10 C13.0969208,10 12.4633676,10.38386 12.112098,10.9589518" id="Oval-21" stroke="#81DA45"></path>
+            <circle id="Oval-22" fill="#864EBA" cx="4.5" cy="5.5" r="1"></circle>
+            <circle id="Oval-22" fill="#864EBA" cx="5" cy="3" r="1"></circle>
+            <circle id="Oval-22" fill="#864EBA" cx="23" cy="3" r="1"></circle>
+            <circle id="Oval-22-Copy" fill="#864EBA" cx="20.5" cy="5.5" r="1"></circle>
+            <path d="M6.86743164,5.58044434 C8.14518229,7.18322754 9.09562174,9.09883626 9.71875,11.3272705" id="Path-72" stroke="#864EBA" stroke-linecap="round" stroke-linejoin="round" transform="translate(8.293091, 8.453857) rotate(1.000000) translate(-8.293091, -8.453857) "></path>
+            <path d="M20.8674316,5.58044434 C22.1451823,7.18322754 23.0956217,9.09883626 23.71875,11.3272705" id="Path-72" stroke="#864EBA" stroke-linecap="round" stroke-linejoin="round" transform="translate(22.293091, 8.453857) scale(1, -1) rotate(13.000000) translate(-22.293091, -8.453857) "></path>
+        </g>
+    </g>
+</svg>

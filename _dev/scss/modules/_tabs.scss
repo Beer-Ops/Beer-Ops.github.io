@@ -1,0 +1,107 @@
+// ---------------------------------------------------------------------
+//  Tabs
+// ---------------------------------------------------------------------
+
+// Tab Styles
+$tabs-tab-bg-color: transparent;
+$tabs-tab-text-color: $black;
+$tabs-tab-padding: 4px 6px;
+$tabs-tab-opacity: 1;
+$tabs-tab-text-alignment: left;
+
+// Active Tab Styles
+$tabs-active-tab-bg-color: $gray-light;
+$tabs-active-tab-text-color: $black;
+
+//Body Styles
+$tabs-body-bg-color: $gray-light;
+$tabs-body-text-color: $black;
+$tabs-body-padding: 12px 8px;
+
+
+.tabs {
+    overflow: hidden;
+}
+
+.tabs > * {
+    display: inline;
+    font-size: 0;
+}
+
+.tabs--2up > * > .tab__tab {
+    width: 50%;
+}
+
+.tabs--3up > * > .tab__tab {
+    width: 33.33333%;
+}
+
+.tabs--4up > * > .tab__tab {
+    width: 25%;
+}
+
+
+// ----------------------------------------
+// Tab Tab
+// ----------------------------------------
+.tab__tab {
+    width: 100%;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: $tabs-tab-padding;
+    text-align: $tabs-tab-text-alignment;
+    background-color: $tabs-tab-bg-color;
+    opacity: $tabs-tab-opacity;
+    color: $tabs-tab-text-color;
+    transition: all $transition;
+}
+
+.tab__tab:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.tabs .is-active .tab__tab {
+    opacity: 1;
+    background-color: $tabs-active-tab-bg-color;
+    color: $tabs-active-tab-text-color;
+}
+
+// ----------------------------------------
+// Tab Body
+// ----------------------------------------
+.tab__bd {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: inherit;
+    float: left;
+    font-size: $base-font-size;
+    padding: $tabs-body-padding;
+    background-color: $tabs-body-bg-color;
+    color: $tabs-body-text-color;
+    opacity: 0;
+    transition: opacity $transition;
+}
+
+.no-js .tabs .tab__bd,
+.tabs .is-active .tab__bd { 
+    opacity: 1;
+}
+
+
+// ----------------------------------------
+// Stack
+// ----------------------------------------
+@include start-at($small) {
+    .tabs--hThenV > * {
+        display: inline;
+        font-size: 0;
+    }
+}
+
+@include stop-at($small) {
+    .tabs--hThenV > * > .tab__tab {
+        width: 100%;
+    }
+}

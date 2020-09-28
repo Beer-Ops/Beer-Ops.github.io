@@ -1,0 +1,192 @@
+## Optinal Rules for bottoms:
+
+- name: Lederhosen
+  image: 24_Bottom_Lederhosen_v1.svg
+  icon: Bottom_Lederhosen.svg
+  rules:
+    - rule:
+
+- name: Dirndl
+  image: 25_Bottom_Dirndl_v1.svg
+  icon: Bottom_Dirndl.svg
+  rules:
+    - rule:
+
+- name: German Football Shorts
+  image: 34_Bottom_GermanFootballShorts_v1.svg
+  icon: Bottom_GermanFootballShorts.svg
+  rules:
+    - rule:
+
+- name: Kraftwerk Pants
+  image: 35_Bottom_KraftwerkPants_v1.svg
+  icon: Bottom-KraftwerkPants.svg
+  rules:
+    - rule:
+
+- name: Adidas Tracksuit
+  image: 36_Bottom_AdidasTracksuit_v1.svg
+  icon: Bottom-AdidasTracksuit.svg
+  position: front
+  rules:
+    - rule:
+
+- name: Astronaut pants
+  image: 37_Bottom_Astronaut_v1.svg
+  icon: Bottom_Astronaut.svg
+  rules:
+    - rule:
+
+- name: Yoga pants
+  image: 38_Bottom_Yogapants_v1.svg
+  icon: Bottom_Yogapants.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Shorts
+  image: 39_Bottom_Newshorts_v1.svg
+  icon: Bottom-Newshorts.svg
+  rules:
+    - rule:
+
+
+
+
+- name: Jeans
+  image: 01_Bottom_JeanRegular_Pants_v01.svg
+  icon: bottom-cowboyjeans.svg
+  position: back
+  rules:
+    - rule: xl-pants
+
+- name: Ripped Jeans
+  image: 02_Bottom_JeansRipped_Pants_v01.svg
+  icon: bottom-jeansripped.svg
+  rules:
+    - rule:
+
+- name: Cuffed Jeans
+  image: 03_Bottom_JeansCuffed_Pants_v01.svg
+  icon: bottom-jeanscuffed.svg
+  position: front
+  rules:
+    - rule:
+
+- name: Bell Bottoms
+  image: 04_Bottoms_BellBottoms_Pants.svg
+  icon: bottom-bellbottoms.svg
+  position: front
+  rules:
+    - rule:
+
+- name: Suit Pants
+  image: 05_Bottom_BizSuit_Pants.svg
+  icon: bottom-businesssuitpants.svg
+  rules:
+    - rule:
+
+- name: Mini Skirt
+  image: 06_Bottoms_Mini_Skirt.svg
+  icon: bottom-miniskirt.svg
+  rules:
+    - rule: shorts
+
+- name: Midi Skirt
+  image: 07_Bottoms_Midi_Skirt_v02.svg
+  icon: bottom-midiskirt.svg
+  rules:
+    - rule:
+
+- name: Maxi Skirt
+  image: 08_Bottom_Maxi_Skirt_v01.svg
+  icon: bottom-maxiskirt.svg
+  position: front
+  rules:
+    - rule: xl-pants
+
+
+- name: Snow Pants
+  image: 09_Bottom_Snow_Pants_v01.svg
+  icon: bottom-snow-pants.svg
+  position: front
+  rules:
+    - rule:
+
+
+- name: Cyclist Shorts
+  image: 10_Bottom_Cyclist_Shorts_v01.svg
+  icon: bottom-cyclistshorts.svg
+  rules:
+    - rule:
+
+- name: PJ Pants
+  image: 11_Bottom_PJs_Pants_v02.svg
+  icon: bottom-pjpants.svg
+  rules:
+    - rule:
+
+- name: Superhero Tights
+  image: 12_Bottom_SuperHero_Tights.svg
+  icon: bottom-superherotights.svg
+  rules:
+    - rule:
+
+- name: Firefighter Pants
+  image: 13_Bottom_Firefighter_Pants_v01.svg
+  position: front
+  icon: bottom-firefighter-pants.svg
+  rules:
+    - rule:
+
+- name: Scuba Pants
+  image: 15_Bottom_Scuba_WetSuit_v01.svg
+  icon: bottom-wetsuit.svg
+  rules:
+    - rule:
+
+- name: Dancer Tights
+  image: 17_Bottoms_Dancer_LegWarmersTights.svg
+  icon: bottom-dancertights.svg
+  rules:
+    - rule:
+
+- name: Bunny Suit
+  image: 18_Bottom_BunnySuit_v01.svg
+  icon: bottom-bunnysuit.svg
+  position: front
+  rules:
+    - rule: xl-pants
+
+- name: Armor Suit
+  image: 19_Bottom_ArmorSuit_v01.svg
+  icon: bottom-armorsuit.svg
+  rules:
+    - rule: xl-pants
+    - rule: xxl-pants
+
+
+- name: Swim Trunks
+  image: 20_Bottom_SwimTrunks_v01.svg
+  icon: bottom-swimtrunks.svg
+  rules:
+    - rule:
+
+- name: Overalls
+  image: 21_Bottom_Overalls_v01.svg
+  icon: bottom-overalls.svg
+  position: front
+  rules:
+    - rule:
+
+- name: Kilt
+  image: 22_Bottom_Kilt_v01.svg
+  icon: bottom-kilt.svg
+  rules:
+    - rule: xl-pants
+
+- name: Soccer Shorts
+  image: 23_Bottom_SoccerShorts_v01.svg
+  icon: bottom-soccershorts.svg
+  rules:
+    - rule: shorts

@@ -1,0 +1,104 @@
+## Optinal Rules for misc:
+
+- name: Cowboy Buckle Belt
+  image: 01_Misc_CowboyBuckleBelt._v01.svg
+  icon: misc-cowboybuckle.svg
+  position: middle
+  rules:
+    - rule:
+
+- name: Dress Buckle Belt
+  image: 02_Misc_DressBuckleBelt_v01.svg
+  icon: misc-dressbucklebelt.svg
+  position: middle
+  rules:
+    - rule:
+
+- name: Bow Tie
+  image: 03_Misc_TiesBow_v01.svg
+  icon: misc-tiesbow.svg
+  position: front
+  rules:
+    - rule:
+
+- name: Bolo Tie
+  image: 04_Misc_TiesBolo_v01.svg
+  icon: misc-tiesbolo.svg
+  rules:
+    - rule:
+
+- name: Ties Oxford
+  image: 05_Misc_TiesOxford_v01.svg
+  icon: misc-tiesoxford.svg
+  rules:
+    - rule:
+
+- name: Messenger Bag
+  image: 06_Misc_MessengerBag_Misc_v01.svg
+  icon: misc-messengerbag.svg
+  rules:
+    - rule:
+
+- name: Cape
+  image: 07_Misc_Cape_Misc._v01.svg
+  icon: misc-cape.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Camera
+  image: 09_Misc_Camera_v01.svg
+  icon: misc-camera.svg
+  rules:
+    - rule:
+
+- name: Jewlery Gold Chain
+  image: 10_Misc_JewelryGoldChain_01.svg
+  icon: misc-jewelrygoldchain.svg
+  rules:
+    - rule:
+
+- name: Pearls
+  image: 11_Misc_JewelryPearls_v01.svg
+  icon: misc-jewelrypearls.svg
+  rules:
+    - rule:
+
+- name: Watch
+  image: 12_Misc_JewelryWatch_v01.svg
+  icon: misc-jewelrywatch.svg
+  rules:
+    - rule:
+
+- name: Bracelet
+  image: 13_Misc_JewelryBracelet_v01.svg
+  icon: misc-jewelrybracelet.svg
+  position: middle
+  rules:
+    - rule:
+
+- name: Earrings
+  image: 14_Misc_PiercingsEarrings_v01.svg
+  icon: misc-piercingearrings.svg
+  rules:
+    - rule:
+
+- name: Nose Ring
+  image: 15_Misc_PiercingsNoseRings_v01.svg
+  icon: misc-piercingnoserings.svg
+  position: front
+  rules:
+    - rule:
+
+- name: Eyebrow Ring
+  image: 16_Misc_PiercingsEyebrowRings_v01.svg
+  icon: misc-piercingeyebrowrings.svg
+  rules:
+    - rule:
+
+- name: Tattoo
+  image: 17_Misc_Tattoo_v01.svg
+  icon: misc-tattoo.svg
+  position: back
+  rules:
+    - rule:

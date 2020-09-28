@@ -1,0 +1,31 @@
+<div class="object-panel-wrap" id="cp-mouths">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+
+            {% for item in site.data.mouths %}
+
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}} {% endfor %}{% if item.isActive %} is-active{% endif %}" data-category="mouths" data-classes="{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}">
+                <span>
+                    <img class="preview" src="/objects/mouths/icons/{{ item.icon }}" alt="{{ item.name }}" />
+
+                    <div class="object mouths{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="mouths{% if item.position %}-{{ item.position }}{% endif %}-holder" >
+                        {% include_relative objects/mouths/{{ item.image }} %}
+                    </div>
+
+                    {% if item.moreObjects %}
+                    {% for object in item.moreObjects %}
+                    <div class="object mouths{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="mouths{% if object.position %}-{{ object.position }}{% endif %}-holder">
+                        {% include_relative objects/mouths/{{ object.object }} %}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </span>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

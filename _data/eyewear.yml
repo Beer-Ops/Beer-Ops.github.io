@@ -1,0 +1,117 @@
+## Optinal Rules for glasses:
+
+
+- name: Scuba Goggles
+  image: 01_Eyewear_ScubaGoggles_v01.svg
+  icon: eyewear-scubagoggles.svg
+  moreObjects:
+      - object: 01_Eyewear_ScubaGoggles_v01-back.svg
+  rules:
+    - rule:
+
+- name: Oculus Rift
+  image: 03_Eyewear_OculusRift.svg
+  icon: Eyewear-oculusrift.svg
+  moreObjects:
+      - object: 03_Eyewear_OculusRift-back.svg
+  rules:
+    - rule:
+
+- name: MardiGra Mask
+  image: 04_Eyewear_MardiGraMask.svg
+  icon: Eyewear-mardigramask.svg
+  moreObjects:
+      - object: 04_Eyewear_MardiGraMask-back.svg
+  rules:
+    - rule:
+
+- name: Glasses Round
+  image: 05_Eyewear_Eyewear_GlassesRound_.svg
+  icon: Eyewear-glassesround.svg
+  position: middle
+  rules:
+    - rule:
+
+- name: Glasses Tortoise Shell
+  image: 06_Eyewear_GlassesTortoiseShell.svg
+  icon: Eyewear-glassestortoiseshell.svg
+  moreObjects:
+      - object: 06_Eyewear_GlassesTortoiseShell-back.svg
+  rules:
+    - rule:
+
+- name: Glasses Bifocals
+  image: 07_Eyewear_GlassesBifocals.svg
+  icon: Eyewear-glassesbifocals.svg
+  position: middle
+  rules:
+    - rule:
+
+- name: Monocle
+  image: 08_Eyewear_Monocle.svg
+  icon: Eyewear-monocle.svg
+  rules:
+    - rule:
+
+- name: Eyepatch
+  image: 09_Eyewear_Eyepatch.svg
+  icon: Eyewear-eyepatch.svg
+  position: back
+  rules:
+    - rule:
+
+- name:  Sports Paint
+  image: 10_Eyewear_SportsPaint.svg
+  icon: Eyewear-sportpaint.svg
+  position: back
+  rules:
+    - rule:
+
+- name: Sunglasses Heart Shaped
+  image: 11_Eyewear_SunglassesHeartShaped.svg
+  icon: Eyewear-sunglassesheartshapes.svg
+  moreObjects:
+      - object: 11_Eyewear_SunglassesHeartShaped-back.svg
+  rules:
+    - rule:
+
+- name: Sunglasses Ray Bans
+  image: 12_Eyewear_SunglassesRayBans.svg
+  icon: Eyewear-sunglassesraybans.svg
+  moreObjects:
+      - object: 12_Eyewear_SunglassesRayBans-back.svg
+  rules:
+    - rule:
+
+- name: Sunglasses Alien Eyes
+  image: 13_Eyewear_SunglassesAlienEyes.svg
+  icon: Eyewear-eyeglassesalieneyes.svg
+  moreObjects:
+      - object: 13_Eyewear_SunglassesAlienEyes-back.svg
+  rules:
+    - rule:
+
+- name: Sunglasses Aviators
+  image: 14_Eyewear_SunglassesAviators.svg
+  icon: Eyewear-sunglassesaviators.svg
+  moreObjects:
+      - object: 14_Eyewear_SunglassesAviators-back.svg
+  position:
+  rules:
+    - rule:
+
+- name: Sunglasses Circular
+  image: 15_Eyewear_SunglassesCircular.svg
+  icon: Eyewear-sunglassescircular.svg
+  moreObjects:
+      - object: 15_Eyewear_SunglassesCircular-back.svg
+  rules:
+    - rule:
+
+- name: Sunglasses Sporty
+  image: 16_Eyewear_SunglassesSporty.svg
+  icon: Eyewear-sunglassessporty.svg
+  moreObjects:
+      - object: 16_Eyewear_SunglassesSporty-back.svg
+  rules:
+    - rule:

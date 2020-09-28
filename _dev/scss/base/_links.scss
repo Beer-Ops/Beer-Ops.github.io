@@ -1,0 +1,152 @@
+// ---------------------------------------------------------------------
+//  Link & Button Styles
+// ---------------------------------------------------------------------
+
+@mixin btn {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    background: $brand;
+    border-radius: 6px;
+    min-width: 140px;
+    border: none;
+    color: $white;
+    font-family: $display;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 16px 24px;
+    transform: translate3d(0, 0, 0);
+    z-index: 1;
+    transition: transform $trans;
+
+    @include start-at($medium){
+        padding: 21px 48px;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        transition: transform $trans, background $trans;
+    }
+
+    &:before {
+        z-index: -1;
+        background: $brand;
+    }
+
+    &:after {
+        background: $brand-dark;
+        z-index: -2;
+        transform: translate3d(0, 4px, 0);
+    }
+
+
+    &:hover {
+        cursor: pointer;
+        border: none;
+        color: $white;
+
+        &:before {
+            background: darken($brand, 5%);
+        }
+
+    }
+
+    &:active {
+        transform: translate3d(0, 3px, 0);
+
+        &:after {
+            transform: translate3d(0, 1px, 0);
+        }
+    }
+
+
+    &[disabled] {
+        opacity: 0.2;
+        pointer-events: none;
+    }
+}
+
+.btn {
+    @include btn;
+}
+
+.btn--sm {
+    padding: 12px 17px;
+    font-size: 14px;
+}
+
+.btn--alt {
+
+    &:before {
+        background: #1DA1F2;
+    }
+
+    &:after {
+        background: #005FD1;
+    }
+
+    &:hover {
+        &:before {
+            background: darken(#1DA1F2, 5%);
+        }
+    }
+}
+
+.btn--wide {
+    display: block;
+    width: 100%;
+}
+
+.btn--light {
+    color: $black;
+
+    &:before {
+        background: #EFF3F6;
+    }
+
+    &:after {
+        background: #CDD4D9;
+    }
+
+    &:hover {
+        color: $black;
+
+        &:before {
+            background: darken(#EFF3F6, 5%);
+        }
+    }
+}
+
+// ----------------------------------------
+// Links
+// ----------------------------------------
+
+.link,
+.a,
+p a,
+.p a {
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.noTouch .tel,
+.noTouch .tel:hover {
+    cursor: text;
+}

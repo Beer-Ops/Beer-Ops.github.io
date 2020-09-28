@@ -1,0 +1,91 @@
+// ---------------------------------------------------------------------
+//  Global Header Styles
+// ---------------------------------------------------------------------
+
+#site-header {
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	background: $black;
+
+
+	.site-header__inner {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		height: 64px;
+		position: relative;
+		z-index: 9;
+		width: 100%;
+		padding-left: 3%;
+	}
+}
+
+// ----------------------------------------
+// Logo Styles
+// ----------------------------------------
+
+$logo-width: 220px;
+$logo-height: 72px;
+
+.logo {
+	flex-grow: 1;
+	//height: 100%;
+	display: flex;
+	align-items: center;
+	position: relative;
+	z-index: 9;
+	margin: 0;
+	padding: 0;
+}
+
+.logo a {
+	display: block;
+	font-family: $sans-serif;
+	font-size: 24px;
+	line-height: 1;
+	color: $white;
+
+	img {
+		width: 180px;
+	}
+}
+
+
+
+#site-navigation {
+
+	ul {
+		flex-grow: 1;
+		height: 100%;
+		display: flex;
+		align-items: stretch;
+	}
+
+	li.is-active {
+		a {
+			background: #2C3238;
+		}
+	}
+
+	a {
+		display: block;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		color: $white;
+		font-size: 12px;
+		font-weight: 500;
+		padding: 16px;
+		background: transparent;
+		transition: background $trans;
+
+		@include start-at($header-breakpoint) {
+			font-size: 14px;
+		}
+
+		&:hover {
+			background: #2C3238;
+		}
+	}
+}

@@ -1,0 +1,173 @@
+// ---------------------------------------------------------------------
+//  Typography Styles
+// ---------------------------------------------------------------------
+
+// ----------------------------------------
+// Heading Mixins
+// ----------------------------------------
+
+// ----------------------------------------
+// Headings
+// ----------------------------------------
+
+
+.h1, h1 {
+    display: block;
+    font-family: $display;
+    font-weight: normal !important;
+    font-size: 48px;
+    line-height: 1;
+
+    span {
+        display: block;
+    }
+
+    @include start-at($medium) {
+        font-size: 56px;
+    }
+    @include start-at($large) {
+        font-size: 80px;
+    }
+    @include start-at($xlarge) {
+        font-size: 96px;
+    }
+}
+
+
+.h2, h2 {
+    /* How it works: */
+    font-family: $sans-serif;
+    font-size: 32px;
+    font-weight: 400 !important;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 40px;
+}
+
+.h3, h3 {
+    /* Pick an outfit: */
+    font-family: $display;
+    font-weight: 400 !important;
+    font-size: 18px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 1.4;
+
+    @include start-at($small) {
+        font-size: 14px;
+    }
+
+    @include start-at($medium) {
+        font-size: 18px;
+    }
+
+    @include start-at($large) {
+        font-size: 24px;
+    }
+}
+
+.h4 {
+    /* Step 1: */
+    font-family: $sans-serif;
+    font-size: 16px;
+    font-weight: 500 !important;
+    color: #6D7379;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+
+// ----------------------------------------
+// Paragraph Style Mixins
+// ----------------------------------------
+
+@mixin para {
+    display: block;
+    font-family: $sans-serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+
+    @include start-at($small) {
+        font-size: 20px;
+    }
+
+}
+
+@mixin p-lg {
+    display: block;
+    font-family: $sans-serif;
+    font-size: 18px;
+    line-height: $base-line-height;
+
+    @include start-at($medium) {
+        font-size: 24px;
+    }
+}
+
+@mixin p-sm {
+    font-size: 14px;
+    line-height: 1.7124;
+}
+
+
+// ----------------------------------------
+// Paragraph Styles
+// ----------------------------------------
+
+.p,
+p {
+    @include para;
+
+    // + * {
+    //     margin-top: 20px;
+    // }
+}
+
+.p-lg {
+    @include p-lg;
+}
+
+.p-sm {
+  @include p-sm;
+}
+
+
+.text-display {
+    font-family: $display;
+}
+
+
+.text-content {
+    > * {
+        margin-bottom: 16px;
+    }
+}
+
+
+.long-form {
+    p {
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+
+    li {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    ul {
+        list-style: initial;
+        padding-left: 48px;
+        margin: 24px 0;
+    }
+
+    ol {
+        list-style: decimal;
+        padding-left: 48px;
+        margin: 24px 0;
+    }
+
+}

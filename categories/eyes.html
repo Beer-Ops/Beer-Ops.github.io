@@ -1,0 +1,33 @@
+<div class="object-panel-wrap object-panel-wrap--double" id="cp-eyes">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+
+            {% for item in site.data.eyes %}
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}} {% endfor %} {% if item.isActive %} is-active{% endif %}" data-category="eyes" data-classes="{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}">
+                <span>
+                    <img class="preview" src="/objects/eyes/icons/{{ item.icon }}" alt="{{ item.name }}" />
+
+                    <div class="object eyes{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="eyes{% if item.position %}-{{ item.position }}{% endif %}-holder" data-classes="{% for rule in item.rules %}{{rule.rule}} {% endfor %}">
+                        {% include_relative objects/eyes/{{ item.image }} %}
+                    </div>
+                </span>
+            </div>
+
+            {% endfor %}
+        </div>
+        {% include arrows.html %}
+    </div>
+
+
+    <div class="object-panel object-panel__colors" id="eye-color">
+        <div class="object-panel__inner">
+            {% for item in site.data.eyeColor %}
+            <div class="color-swatch-wrap{% if item.isActive %} is-active{% endif %}">
+                <span class="color-swatch{% if item.isActive %} last-item{% endif %}" data-color="#{{ item.color }}"><span></span></span>
+            </div>
+            {% endfor %}
+        </div>
+        {% include arrows.html %}
+    </div>
+
+</div>

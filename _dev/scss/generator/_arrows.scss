@@ -1,0 +1,161 @@
+// ---------------------------------------------------------------------
+//  Arrows
+// ---------------------------------------------------------------------
+
+.arrow {
+    display: none;
+}
+
+@include start-at($panel-bp) {
+
+    .arrow {
+        border: 1px solid darken($gray-light, 5%);
+        position: absolute;
+        width: 100%;
+        height: 44px;
+        background: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        transition: background $trans, opacity $trans;
+
+        &:hover {
+            cursor: pointer;
+            background: $gray-light;
+        }
+
+        &.disabled {
+            > * {
+                opacity: 0.3;
+            }
+
+            &:hover {
+                pointer-events: none;
+                background: $white;
+            }
+
+            //pointer-events: none;
+        }
+
+        svg {
+            width: 12px;
+            height: 19px;
+            transition: opacity $trans;
+
+            * {
+                fill: $black;
+            }
+        }
+    }
+
+    .scroll-up {
+        top: 0;
+        left: 0;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 3px 5px 0 rgba(27,31,35,0.15);
+
+    }
+    .scroll-down {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 0 10px 10px;
+        background: #FFFFFF;
+        box-shadow: 0 -3px 5px 0 rgba(27,31,35,0.15);
+    }
+}
+
+
+// @include stop-at($panel-bp){
+// .arrow {
+//     position: absolute;
+//     top: calc(50% - 26px);
+//     width: 42px;
+//     min-width: 42px;
+//     height: 42px;
+//     border-radius: 50%;
+//     display: none;
+//     align-items: center;
+//     justify-content: center;
+//     z-index: 4;
+//     transition: opacity $trans;
+//
+//     @include start-at($medium) {
+//
+//     }
+//
+//     @include start-at($large) {
+//         display: flex;
+//         width: 48px;
+//         min-width: 48px;
+//         height: 52px;
+//     }
+//
+//     img {
+//         transition: transform $trans;
+//     }
+//
+//     &:before,
+//     &:after {
+//         content: '';
+//         display: block;
+//         width: 100%;
+//         height: 100%;
+//         position: absolute;
+//         border-radius: 50%;
+//     }
+//
+//     &:before {
+//         top: 0;
+//         right: 0;
+//         background: lighten($gray-dark, 10%);
+//         z-index: -1;
+//         transition: transform $trans;
+//     }
+//
+//     &:after {
+//         top: 2px;
+//         right: 2px;
+//         background: $black;
+//         border-radius: 50%;
+//         z-index: -2;
+//     }
+//
+//     &.disabled {
+//         opacity: 0;
+//         pointer-events: none;
+//     }
+// }
+//
+// .scroll-down {
+//     right: 12px;
+//
+//     &:hover {
+//         cursor: pointer;
+//         img,
+//         &:before {
+//             transform: translate3d(-2px, 2px, 0);
+//         }
+//     }
+//
+//     @include start-at($medium) {
+//         right: 40px;
+//     }
+// }
+//
+// .scroll-up {
+//     left: 12px;
+//
+//     &:hover {
+//         cursor: pointer;
+//         img,
+//         &:before {
+//             transform: translate3d(-2px, 2px, 0);
+//         }
+//     }
+//
+//     @include start-at($medium) {
+//         left: 40px;
+//     }
+// }
+// }

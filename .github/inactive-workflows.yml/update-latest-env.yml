@@ -1,0 +1,16 @@
+on: [repository_dispatch]
+name: Update latest env
+jobs:
+  update-latest-env:
+    runs-on: ubuntu-latest
+    if:  startsWith(github.event.action, 'update-latest-env')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Update issue template
+        run: ./scripts/add-latest-provisioned-environment-to-issue-template.sh  '${{github.event.client_payload.customer}}' '${{github.event.client_payload.cloud}}' '${{github.event.client_payload.url}}' 
+        env:
+          GITHUB_COM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OCTO_ORG: ${{ github.event.repository.owner.login }}
+          OCTO_REPO : ${{ github.event.repository.name }}
+          OCTO_UX_TOKEN: ${{ secrets.GITHUB_TOKEN }}

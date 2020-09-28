@@ -1,0 +1,20 @@
+name: Siri Shortcut
+on:
+  repository_dispatch:
+    types: [siri-shortcut]
+
+jobs:
+  create-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create_issue
+        uses: actions/github-script@0.5.0
+        env:
+          customer: '${{ github.event.client_payload.description }}'
+        with:
+          github-token: ${{secrets.GPR_PAT}}
+          script: |
+            customer = process.env.customer
+            const title = 'Demo for ' + customer
+            const body = customer
+            github.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title: title, body: body })

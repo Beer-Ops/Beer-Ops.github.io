@@ -1,0 +1,107 @@
+// ---------------------------------------------------------------------
+//  Base Global Styles
+// ---------------------------------------------------------------------
+
+html,
+body {
+    font-size: 62.5%;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.2 ease;
+
+    &.page-loaded {
+        opacity: 1;
+    }
+
+    &.menu-is-open,
+    &.is-thinking,
+    &.modal-is-open {
+    	overflow: hidden;
+    }
+
+    &.template-octocat-generator {
+        background: $off-white;
+    }
+}
+
+
+
+body,
+input,
+button,
+select,
+textarea {
+    font-family: $main-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    color: $black;
+}
+
+main {
+    transition: filter 0.1s linear;
+}
+
+body.menu-is-open main {
+	filter: blur(2px);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    &[href^="tel:"] {
+
+        &:hover {
+            cursor: default;
+        }
+    }
+}
+
+[data-scroll-to],
+[data-click-target] {
+    cursor: pointer;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+picture > * {
+    width: 100%;
+    height: auto;
+}
+
+@mixin selection {
+    color: $white;
+    background: $black;
+}
+
+::selection {
+    @include selection;
+}
+::-moz-selection {
+    @include selection;
+}

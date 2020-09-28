@@ -1,0 +1,244 @@
+// ---------------------------------------------------------------------
+//  Control Panel
+// ---------------------------------------------------------------------
+
+
+#ui-wrapper {
+    position: absolute;
+    z-index: 8;
+
+    @include stop-at($panel-bp) {
+        top: 50%;
+        right: 12px;
+        transform: translate3d(0, -50%, 0);
+    }
+
+    @include start-at($panel-bp) {
+        width: 50%;
+        top: calc(100% - 64px);
+        left: 25%;
+
+        > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+// ----------------------------------------
+// Icon
+// ----------------------------------------
+
+
+.ui-icon {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background: transparent;
+
+    .kiosk & {
+        margin: 0 12px;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    &:before {
+        background: $white;
+        border: 1px solid $tile-border;
+        top: 0;
+        z-index: -1;
+        transition: transform $trans;
+    }
+
+    &:after {
+        background: $tile-border;
+        top: 4px;
+        z-index: -2;
+    }
+
+
+    p {
+        font-family: $sans-serif-headline;
+        font-size: 12px;
+        margin: 0;
+        position: absolute;
+        right: 50%;
+        transform: translate3d(50%, 10px, 0);
+        bottom: calc(100% + 10px);
+        white-space: nowrap;
+        text-align: center;
+        background: $gray-dark;
+        color: $white;
+        border-radius: 6px;
+        padding: 6px 10px;
+        opacity: 0;
+        transition: transform $trans, opacity $trans;
+
+        &:before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            bottom: -4px;
+            left: calc(50% - 5px);
+            display: block;
+            position: absolute;
+            background: $gray-dark;
+            transform: rotate(45deg);
+        }
+    }
+
+    svg,
+    img {
+        display: block;
+        width: 20px;
+        height: auto;
+        transition: transform $trans;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        &:before,
+        svg,
+        img {
+            transform: translate3d(0, 2px, 0);
+        }
+
+        p {
+            transform: translate3d(50%, 0, 0);
+            opacity: 1;
+        }
+    }
+
+    &.ui-icon--green {
+        &:before {
+            background: $brand;
+            border: 1px solid $brand;
+        }
+
+        &:after {
+            background: $brand-dark;
+        }
+    }
+    &.ui-icon--blue {
+        &:before {
+            background: $blue;
+            border: 1px solid $blue;
+        }
+
+        &:after {
+            background: $blue-dark;
+        }
+    }
+    &.ui-icon--purple {
+        &:before {
+            background: $purple;
+            border: 1px solid $purple;
+        }
+
+        &:after {
+            background: $purple-dark;
+        }
+    }
+
+    @include stop-at($panel-bp){
+        width: 44px;
+        height: 44px;
+        margin: 0 0 6px;
+
+        p {
+            @include visually-hidden;
+        }
+
+        svg,
+        img {
+            width: 16px;
+        }
+
+        &:after {
+            background: $tile-border;
+            top: 2px;
+            z-index: -2;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            &:before,
+            svg,
+            img {
+                transform: translate3d(0, 1px, 0);
+            }
+        }
+    }
+
+    &.ui-icon--sm {
+        width: 32px;
+        height: 32px;
+
+        svg,
+        img {
+            width: 11px;
+        }
+
+        &:after {
+            top: 3px;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            &:before,
+            svg,
+            img {
+                transform: translate3d(0, 1px, 0);
+            }
+        }
+    }
+
+    &[disabled] {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+}
+
+
+// ----------------------------------------
+// Icon Square
+// ----------------------------------------
+
+.ui-icon.ui-icon--square {
+    width: 44px;
+    height: 40px;
+
+    &:before,
+    &:after {
+        border-radius: 6px;
+    }
+
+    svg,
+    img {
+        height: 17px;
+        width: auto;
+    }
+}

@@ -1,0 +1,67 @@
+---
+layout: default
+title: Octocat Gallery
+id: gallery
+permalink: /gallery/
+---
+
+
+<div class="wrapper-wide py-6">
+    <div class="gallery-preview">
+        {% for img in site.data._gallery %}
+            <div class="gallery-item" data-animate-in="up">
+                <img onclick="openModal();currentSlide({{ forloop.index }})" src="/assets/images/octocats/{{ img.img }}" alt="{% if img.alt %}{{ img.alt }}{% else %}octocat{% endif %}" />
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="gallery-modal" class="gallery-modal">
+      <span class="gallery__close" onclick="closeModal()"><span class="sr-only">Close</span></span>
+      <div class="gallery-modal-content">
+        {% for img in site.data._gallery %}
+        <div class="gallery-slides">
+            <img onclick="closeModal()" src="/assets/images/octocats/{{ img.img }}" alt="{% if img.alt %}{{ img.alt }}{% else %}octocat{% endif %}" style="width:100%" />
+        </div>
+        {% endfor %}
+        <a class="gallery__prev" onclick="plusSlides(-1)"><span class="sr-only">previous</span></a>
+        <a class="gallery__next" onclick="plusSlides(1)"><span class="sr-only">next</span></a>
+      </div>
+    </div>
+</div>
+<script>
+    // Open the Modal
+    function openModal() {
+        document.getElementById('gallery-modal').style.display = "block";
+    }
+
+    // Close the Modal
+    function closeModal() {
+        document.getElementById('gallery-modal').style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("gallery-slides");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>

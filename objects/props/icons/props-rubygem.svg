@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>props-rubygem</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-118.000000, -354.000000)"></g>
+        <g id="Group-126" transform="translate(11.000000, 14.000000)" fill-rule="nonzero">
+            <polygon id="Path-268" fill="#D42E2D" points="0.551091974 8.03590224 7.57809171 0.12890625 7.57809171 8.03590224"></polygon>
+            <polygon id="Path-269" fill="#951918" points="0.698242188 8.26104058 13.1784557 20.8720703 7.62872869 8.26104058"></polygon>
+            <polygon id="Path-270" fill="#951918" points="7.71658603 0.370903863 7.71658603 8.12183974 13.3665771 8.12183974"></polygon>
+            <polygon id="Path-271" fill="#951918" points="18.4780273 0.304063585 18.4780273 8.09946018 25.0032737 8.09946018"></polygon>
+            <polygon id="Path-272" fill="#951918" points="13.558161 20.819553 18.4312855 8.17644586 24.9154164 8.17644586"></polygon>
+            <polygon id="Path-259" stroke="#FDA9A9" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" points="0.413751776 8.0981174 7.58256392 0.0408799913 18.5423695 0.0408799913 25.1078658 8.0981174 13.4068271 21.3068305"></polygon>
+            <polygon id="Path-273" fill="#D42E2D" points="7.84036532 0.0156656901 18.3647794 0.0156656901 13.4411621 7.96577962"></polygon>
+            <polygon id="Path-274" fill="#D42E2D" points="13.4374112 8.06753201 18.5364546 8.06753201 18.5364546 0.217529297"></polygon>
+            <polygon id="Path-275" fill="#D42E2D" points="7.65166681 8.13705783 13.2426536 20.9815809 18.3841109 8.13705783"></polygon>
+            <path d="M0.559747869,8.13019477 L25.0041393,8.13019477" id="Path-265" stroke="#FDA9A9" stroke-width="0.6"></path>
+            <polyline id="Path-266" stroke="#FDA9A9" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" points="7.56885875 0.155015734 7.56885875 8.13496908 13.3662886 21.1762831 18.5142378 8.13496908 18.5142378 0.155015734"></polyline>
+            <polyline id="Path-267" stroke="#FDA9A9" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" points="7.7458718 0.253038194 13.3266158 7.87715658 18.2903387 0.253038194"></polyline>
+        </g>
+    </g>
+</svg>

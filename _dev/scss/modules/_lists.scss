@@ -1,0 +1,70 @@
+// ---------------------------------------------------------------------
+//  Lists Styles
+// ---------------------------------------------------------------------
+
+.ul > * {
+	list-style-type: disc;
+	margin-left: 36px;
+}
+
+
+// ----------------------------------------
+// Inline List Styles
+// ----------------------------------------
+
+.ul-inline {
+    overflow: hidden;
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+
+	> * {
+		padding-right: 10px;
+	}
+}
+
+.ul-inline--piped {
+
+	> * + *:before {
+	   content: "|";
+	   margin-right: 10px;
+	   display: inline-block;
+   }
+}
+
+// ----------------------------------------
+// Social List Styles
+// ----------------------------------------
+
+.social-list {
+    display: inline-block;
+    vertical-align: top;
+
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+		margin-right: 14px;
+
+        &:last-child {
+			margin-right: 0;
+		}
+    }
+
+	a {
+		display: block;
+		padding: 4px;
+
+		&:hover {
+	        opacity: 1;
+
+	        svg {
+	            fill: $black;
+	        }
+	    }
+	}
+
+    svg {
+        fill: $gray-light;
+		transition: all $transition;
+    }
+}

@@ -1,0 +1,142 @@
+name: Deploy to GCP
+on: [deployment]
+
+env:
+  PROJECT_ID: 'octodemo'
+  RUN_REGION: 'europe-west1'
+  SERVICE_NAME: 'octocatgen'
+  PKG_URL: '${{github.event.deployment.payload.gprUrl}}'
+
+jobs:
+  deploy-to-gcp:
+    runs-on: ubuntu-latest
+    env:
+      issue_number: '${{github.event.deployment.payload.issue}}'
+      cloud: '${{github.event.deployment.payload.cloud}}'
+      gprUrl: '${{github.event.deployment.payload.gprUrl}}'
+      customer: '${{github.event.deployment.payload.customer}}'
+      deployment_id: '${{github.event.deployment.id}}'
+
+    if:  startsWith(github.event.deployment.task, 'deploy-to-GCP')
+    steps:
+
+    - name: Announce deployment
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+          let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+          github.repos.createDeploymentStatus({
+            mediaType: {
+              previews: ["flash-preview", "ant-man"]
+            },
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment_id,
+            state: 'in_progress',
+            description: 'Kicking off deployment on ' + cloud + ' for ' + customer  + ' now.',
+            target_url: log_url,
+            log_url: log_url
+          })
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: ':rocket: Kicking off deployment on ' + cloud + ' for ' + customer + ' now. [View deployment live logs](' +  log_url + ').'
+          })
+
+    - name: Docker tag and pull
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        docker login -u ${GITHUB_ACTOR} -p ${GITHUB_TOKEN} docker.pkg.github.com
+        docker pull $PKG_URL
+
+    # Setup gcloud CLI
+    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '281.0.0'
+        service_account_email: ${{ secrets.SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+    - run: gcloud projects list
+
+    - run: |
+        gcloud config set project octodemo
+
+    - run: |
+        gcloud auth configure-docker
+
+    - name: Push image to Google Cloud Container Registry
+      run: |
+        docker tag $PKG_URL eu.gcr.io/octodemo/$SERVICE_NAME:$GITHUB_SHA
+        docker push eu.gcr.io/octodemo/$SERVICE_NAME:$GITHUB_SHA
+
+    # Deploy image to Cloud Run
+    - name: Deploy
+      run: |
+        yes | gcloud run deploy $SERVICE_NAME \
+          --region $RUN_REGION\
+          --image eu.gcr.io/octodemo/$SERVICE_NAME:$GITHUB_SHA \
+          --platform managed  --port 4000
+
+    # Get URL for Issue
+    - name: Get Service URL
+      run: |
+        echo ::set-env name=gcp_url::$(gcloud run services describe $SERVICE_NAME --platform managed --region $RUN_REGION --format 'value(status.url)')
+
+    - name: Update deploy success
+      if: (success())
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+          let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+          github.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment_id,
+            state: 'success',
+            description: 'Deployed successfully to ' + cloud + ' for ' +  customer,
+            environment_url: 'http://octogenerator-demo.s3-website-eu-west-1.amazonaws.com',
+            target_url: log_url,
+            log_url: log_url
+          })
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: ':white_check_mark: Deployed successfully to ' + cloud + ' for ' +  customer + ': ' + process.env.gcp_url
+          })
+          github.issues.addLabels({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['deployed']
+          })
+
+    - name: Update deploy failure
+      if: (failure())
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+          let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+          github.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment_id,
+            state: 'failure',
+            description: 'Deployment to ' + cloud + ' failed for ' +  customer + ' :cry:',
+            target_url: log_url,
+            log_url: log_url
+          })
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: ':red_circle: Deployment to ' + cloud + ' failed for ' +  customer + ' :cry:. [View failed deployment logs](' + log_url + ').'
+          })

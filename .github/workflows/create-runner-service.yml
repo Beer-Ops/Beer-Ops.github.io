@@ -1,0 +1,97 @@
+name: Deploy to GCP
+on:
+    repository_dispatch:
+      types: [create-selfhosted]
+
+env:
+  PROJECT_ID: 'octodemo'
+  RUN_REGION: 'europe-west3'
+  SERVICE_NAME: 'octocatgen'
+  NAME_RUNNER: "ghe-runner-gcp-${{github.event.client_payload.issue}}"
+jobs:
+  deploy-selfhosted-runner:
+    runs-on: ubuntu-latest
+    env:
+      issue_number: '${{github.event.client_payload.issue}}'
+
+    steps:
+
+    - name: Announce deployment
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number } = process.env;
+          const log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}` 
+
+          github.issues.createComment({
+            ...context.repo,
+            issue_number: issue_number,
+            body: `:rocket: Kicking off deployment of self-hosted runner now. [View deployment live logs](${ log_url}).`
+          })
+
+    # Setup gcloud CLI
+    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '281.0.0'
+        service_account_email: ${{ secrets.SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+    - run: gcloud projects list
+
+    - run: |
+        gcloud config set project octodemo
+
+    # Create VM for runner
+    - name: Deploy selfhosted-runner vm
+      run: |
+        gcloud compute instances create ${{ env.NAME_RUNNER }} \
+          --zone=europe-west3-c --machine-type=n1-standard-1 \
+          --subnet=default --network-tier=PREMIUM  \
+          --service-account=github-actions@octodemo.iam.gserviceaccount.com \
+          --scopes=https://www.googleapis.com/auth/cloud-platform --tags=https-server \
+          --image=debian-9-stretch-v20200420 --image-project=debian-cloud \
+          --boot-disk-size=10GB --boot-disk-type=pd-standard \
+          --boot-disk-device-name=${{ env.NAME_RUNNER }}
+
+    # Get URL for Issue
+    - name: Setup selfhosted-runner service on vm
+      run: |
+        gcloud compute ssh ${{ env.NAME_RUNNER }} --zone=europe-west3-c --command="gsutil cp gs://gh-runner/setup-service.sh . && \
+        chmod +x setup-service.sh && \
+        ./setup-service.sh ${{ github.repository_owner }} ${{ github.event.repository.name }} ${{ secrets.RDP_TOKEN }}" --quiet
+    
+    - name: Update deploy success
+      if: (success())
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number } = process.env;
+          const runner_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/settings/actions`
+        
+          github.issues.createComment({
+            ...context.repo,
+            issue_number: issue_number,
+            body: `:white_check_mark: You can find the runner now at  ${runner_url}`
+          })
+          github.issues.addLabels({
+            ...context.repo,
+            issue_number: issue_number,
+            labels: ['deployed']
+          })
+
+    - name: Update deploy failure
+      if: (failure())
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number } = process.env;
+          const log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}`
+          
+          github.issues.createComment({
+            ...context.repo,
+            issue_number: issue_number,
+            body: `:red_circle: Deployment of self-hosted runner failed :cry: [View failed deployment logs](${log_url}).`
+          })

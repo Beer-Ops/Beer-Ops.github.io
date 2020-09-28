@@ -1,0 +1,33 @@
+<header id="site-header">
+    <div class="site-header__inner">
+        <h1 class="logo" itemscope itemtype="http://schema.org/Organization">
+            {% if page.id == 'kiosk-homepage' or page.id == 'kiosk-octocat-generator' %}
+            <a href="{{ '/kiosk/' | relative_url }}" itemprop="url">
+                <span class="sr-only" itemprop="name">GitHub</span>
+                <span class="sr-only" itemprop="description">Octocat Generator</span>
+                <img itemprop="logo" src="{{ '/assets/images/My-Octocat-logo.svg' | relative_url}}" alt="My Octocat logo by GitHub" />
+            </a>
+            {% else %}
+            <a href="{{ '/' | relative_url }}" itemprop="url">
+                <span class="sr-only" itemprop="name">GitHub</span>
+                <span class="sr-only" itemprop="description">Octocat Generator</span>
+                <img itemprop="logo" src="{{ '/assets/images/My-Octocat-logo.svg' | relative_url}}" alt="My Octocat logo by GitHub" />
+            </a>
+            {% endif %}
+
+        </h1>
+
+        {% if page.id != 'kiosk-homepage' and page.id != 'kiosk-octocat-generator' %}
+        <nav id="site-navigation">
+            <ul>
+                <li {% if page.id == 'octocat-generator' %}class="is-active"{% endif %}>
+                    <a href="/build-your-octocat/">Create<span class="d-none d-sm-inline"> Your Octocat</span></a>
+                </li>
+                <li {% if page.id == 'gallery' %}class="is-active"{% endif %}>
+                    <a href="/gallery/"><span class="d-none d-sm-inline">View </span>Gallery</a>
+                </li>
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</header>

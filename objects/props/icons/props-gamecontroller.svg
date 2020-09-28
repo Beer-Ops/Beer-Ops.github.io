@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>props-gamecontroller</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-531.000000, -354.000000)"></g>
+        <g id="Group-52" transform="translate(10.000000, 16.000000)" fill-rule="nonzero">
+            <ellipse id="Oval-52" fill="#2A1958" cx="14.5" cy="2.53333333" rx="2.41666667" ry="2.53333333"></ellipse>
+            <path d="M6.64181707,1.26666667 L22.3581829,1.26666667 C24.7786795,1.26666667 26.8270159,3.05479262 27.1538558,5.45312102 L28.5111533,15.4128764 C28.7468386,17.1423192 27.5359089,18.7353703 25.8064661,18.9710557 C25.6650343,18.9903298 25.5224592,19 25.3797201,19 L25.3797201,19 C23.1318039,19 21.0467606,17.8271955 19.8793997,15.9061553 L18.0919596,12.9646962 L10.8670349,12.9646962 L9.09322359,15.9057284 C7.9350159,17.8260714 5.85607426,19 3.61349487,19 L3.61349487,19 C1.87133781,19 0.459040466,17.5877027 0.459040466,15.8455456 C0.459040466,15.703074 0.468692592,15.5607661 0.487930543,15.4195993 L1.84614422,5.45312102 C2.17298409,3.05479262 4.22132055,1.26666667 6.64181707,1.26666667 Z" id="Rectangle-39" fill="#D1C6F5"></path>
+            <ellipse id="Oval-51" fill="#D42E2D" cx="21.75" cy="5.06666667" rx="1.20833333" ry="1.26666667"></ellipse>
+            <ellipse id="Oval-51" fill="#3AB99D" cx="21.75" cy="10.1333333" rx="1.20833333" ry="1.26666667"></ellipse>
+            <ellipse id="Oval-51" fill="#3157B2" cx="19.3333333" cy="7.6" rx="1.20833333" ry="1.26666667"></ellipse>
+            <ellipse id="Oval-51" fill="#F5CD2E" cx="24.1666667" cy="7.6" rx="1.20833333" ry="1.26666667"></ellipse>
+            <rect id="Rectangle-41" fill="#2A1958" x="6.04166667" y="3.8" width="2.41666667" height="7.6" rx="1.20833333"></rect>
+            <rect id="Rectangle-41" fill="#2A1958" transform="translate(7.250000, 7.600000) rotate(90.000000) translate(-7.250000, -7.600000) " x="6.04166667" y="3.8" width="2.41666667" height="7.6" rx="1.20833333"></rect>
+        </g>
+    </g>
+</svg>

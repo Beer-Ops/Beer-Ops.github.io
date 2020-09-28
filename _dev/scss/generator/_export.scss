@@ -1,0 +1,162 @@
+// ---------------------------------------------------------------------
+//  Export Styles
+// ---------------------------------------------------------------------
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(black, 0.8);
+    z-index: 1999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+
+    &:after {
+        content: '';
+        width: 44px;
+        height: 44px;
+        display: block;
+        position: absolute;
+        top: calc(50% - 22px);
+        left: calc(50% - 22px);
+        transition: transform 3.2s ease-in-out;
+        background: url('../images/svgs/loading.svg') center / cover no-repeat;
+
+    }
+}
+
+body.is-thinking {
+    .loading-screen:after {
+        transform: rotate(1440deg);
+    }
+}
+
+body.is-thinking,
+body.modal-is-open {
+    .loading-screen {
+        opacity: 1;
+    }
+}
+
+// ----------------------------------------
+// Modal
+// ----------------------------------------
+
+#export-modal {
+	#img {
+		max-width: 240px;
+	    margin: 0 auto 36px;
+        display: none;
+	}
+
+    .export-options {
+        display: block;
+    }
+    .export-twitter-posting {
+        display: none;
+
+        img, svg {
+            width: 82px;
+            margin: 0 auto;
+        }
+    }
+
+    .export-twitter-preview {
+        display: none;
+    }
+
+    .complete,
+    .error {
+        display: none;
+    }
+
+    &.posting {
+        .export-options,
+        .complete,
+        .error {
+            display: none;
+        }
+        .export-twitter-posting {
+            display: block;
+        }
+    }
+
+    &.posting.previewing {
+        .export-options,
+        .complete,
+        .error,
+        .export-twitter-posting {
+            display: none;
+        }
+        .export-twitter-preview {
+            display: block;
+        }
+    }
+
+    &.completed {
+        .export-options,
+        .export-twitter-posting,
+        .error {
+            display: none;
+        }
+
+        .complete {
+            display: block;
+        }
+    }
+
+    &.error {
+        .export-options,
+        .export-twitter-posting,
+        .complete {
+            display: none;
+        }
+        .error {
+            display: block;
+        }
+    }
+
+}
+
+#octocat-name-modal {
+	font-family: $display;
+	text-align: center;
+    font-size: 24px;
+}
+
+.export-twitter-preview {
+    .tweet-char-count {
+        text-align: right;
+        display: block;
+        font-size: 11px;
+        color: $gray;
+    }
+    #tweet-text {
+        background: $gray-light;
+        background: #ECEFF1;
+        width: 100%;
+        height: 90px;
+        border-radius: 6px;
+        padding: 12px;
+        font-size: 13px;
+        color: $gray;
+        resize: none;
+    }
+}
+
+
+
+
+#email-octocat ,
+#print-octocat {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height $trans;
+
+    &.is-active {
+        max-height: 160px;
+    }
+}

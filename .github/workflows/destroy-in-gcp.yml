@@ -1,0 +1,45 @@
+name: Destroy from GCP
+on:
+    repository_dispatch:
+      types: [destroy-in-gcp]
+
+jobs:
+  destroy-from-gcp:
+    runs-on: ubuntu-latest
+    steps:
+
+    # Setup gcloud CLI
+    - name: setup gcloud cli
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '281.0.0'
+        service_account_email: ${{ secrets.SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+    - name: delete service from gcp
+      run: |
+        yes | gcloud run services delete octocatgen --platform managed --region europe-west1 --project octodemo
+
+    - name: Update issue
+      env:
+        issue_number: '${{github.event.client_payload.issue}}'
+        cloud: '${{github.event.client_payload.cloud}}'
+        gprUrl: '${{github.event.client_payload.gprUrl}}'
+        customer: '${{github.event.client_payload.customer}}'
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer } = process.env;
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Destroyed environment successfully from ' + cloud + ' ( ' + gprUrl + ' ) for ' +  customer
+          })
+          github.issues.removeLabel({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'deployed'
+          })

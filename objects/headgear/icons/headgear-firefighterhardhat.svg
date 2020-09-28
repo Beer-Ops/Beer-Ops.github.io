@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>headgear-firefighterhardhat</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-177.000000, -710.000000)"></g>
+        <g id="Group-43" transform="translate(12.725833, 12.380859)" fill-rule="nonzero">
+            <path d="M3.19064811,13.2983697 L19.6959042,13.2983697 L19.6959042,21.1066809 C16.6015479,19.4149229 13.8506719,18.5455126 11.4432762,18.49845 C9.03588043,18.5455126 6.28500441,19.4149229 3.19064811,21.1066809 L3.19064811,13.2983697 Z" id="Combined-Shape" fill="#A4A721"></path>
+            <rect id="Rectangle-35" stroke="#7E1E1E" fill="#7E1E1E" stroke-linejoin="bevel" transform="translate(5.600676, 6.235853) rotate(-45.000000) translate(-5.600676, -6.235853) " x="2.76369374" y="4.41252533" width="5.67396552" height="3.6466558" rx="1.8233279"></rect>
+            <rect id="Rectangle-35" stroke="#7E1E1E" fill="#7E1E1E" stroke-linejoin="bevel" transform="translate(17.283454, 6.235853) scale(-1, 1) rotate(-45.000000) translate(-17.283454, -6.235853) " x="14.446471" y="4.41252533" width="5.67396552" height="3.6466558" rx="1.8233279"></rect>
+            <path d="M19.2358479,13.2983697 L3.56438243,13.2983697 C3.26103521,10.5508372 3.75281859,8.46444593 4.96392453,6.79931794 C6.14814737,5.17115105 8.40338985,3.85743277 11.4380192,3.9287914 C14.4726485,3.85743277 16.727891,5.17115105 17.9121138,6.79931794 C19.1232198,8.46444593 19.5391951,10.5508372 19.2358479,13.2983697 Z" id="Combined-Shape" fill="#CE2D17"></path>
+            <path d="M3.60228645,13.2596718 C3.60228645,10.4367053 3.75281859,8.77110311 4.96392453,7.10597513 C6.14814737,5.47780823 8.40338985,4.16408995 11.4380192,4.23544858 C14.4726485,4.16408995 16.727891,5.47780823 17.9121138,7.10597513 C19.1232198,8.77110311 19.2737519,10.4142951 19.2737519,13.2596718" id="Combined-Shape" stroke="#7E1E1E" stroke-width="1.5"></path>
+            <polygon id="Rectangle-37" stroke="#FFD86F" fill="#FFD86F" stroke-linecap="round" stroke-linejoin="round" points="9.6390047 0.404043615 13.2475476 0.404043615 12.6555037 2.94051595 10.2555109 2.94051595"></polygon>
+            <polygon id="Combined-Shape" stroke="#312D30" fill="#312D30" stroke-linejoin="round" points="16.0251828 12.9530146 6.85085556 12.9530146 6.85085556 7.33319401 9.27672098 4.68348833 9.27672098 2.63385877 13.5993174 2.63385877 13.5993174 4.68348833 16.0251828 7.33319401"></polygon>
+            <path d="M15.6015535,12.4765222 L7.27448488,12.4765222 L7.27448488,7.37569789 L9.47631911,4.97069528 L9.47631911,3.11035115 L13.3997193,3.11035115 L13.3997193,4.97069528 L15.6015535,7.37569789 L15.6015535,12.4765222 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2,2,2,2"></path>
+            <rect id="Rectangle-36" stroke="#7E1E1E" fill="#7E1E1E" x="9.08448781" y="6.40126516" width="4.70706276" height="4.70706276" rx="2"></rect>
+            <circle id="Oval-26" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" cx="10.0765669" cy="10.3604272" r="1"></circle>
+            <circle id="Oval-26-Copy" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" cx="12.7994715" cy="7.13876088" r="1"></circle>
+            <polyline id="Path-107" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="10.0442463 9.79732368 10.0442463 7.25484885 11.4432762 7.25484885"></polyline>
+            <polyline id="Path-107" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.071989, 8.954555) scale(-1, -1) translate(-12.071989, -8.954555) " points="11.3445061 10.2257927 11.3445061 7.68331782 12.7994715 7.68331782"></polyline>
+            <polyline id="Path-108" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="10.9547285 6.58736038 11.6201794 7.25281127 11.0196174 7.85337325"></polyline>
+            <polyline id="Path-108" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(11.452905, 10.225793) scale(-1, 1) translate(-11.452905, -10.225793) " points="10.9529049 9.59278622 11.6183557 10.2582371 11.0177938 10.8587991"></polyline>
+            <rect id="Rectangle-38-Copy" stroke="#ECEE70" x="19.1969747" y="14.6142765" width="1" height="6.60941702"></rect>
+            <rect id="Rectangle-38" stroke="#ECEE70" x="3.67059042" y="14.6142765" width="1" height="6.60941702"></rect>
+            <rect id="Rectangle-38" stroke="#C09353" x="3.03647234" y="14.6142765" width="1" height="6.60941702"></rect>
+            <rect id="Rectangle-38-Copy" stroke="#C09353" x="19.8310928" y="14.6142765" width="1" height="6.60941702"></rect>
+            <path d="M0.947294557,13.5871327 L21.9472946,13.5871327" id="Path-106" stroke="#CE2D17" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M3.32476619,20.514793 L3.05653002,20.514793 L3.05653002,22.4171473 L2.42241194,22.4171473 L2.42241194,22.932594 L3.95888428,22.932594 L3.95888428,22.4171473 L3.32476619,22.4171473 L3.32476619,20.514793 Z" id="Combined-Shape" stroke="#5D5C5C" fill="#5D5C5C"></path>
+            <path d="M20.0993289,20.514793 L19.8310928,20.514793 L19.8310928,22.4171473 L19.1969747,22.4171473 L19.1969747,22.932594 L20.733447,22.932594 L20.733447,22.4171473 L20.0993289,22.4171473 L20.0993289,20.514793 Z" id="Combined-Shape-Copy-4" stroke="#5D5C5C" fill="#5D5C5C"></path>
+        </g>
+    </g>
+</svg>

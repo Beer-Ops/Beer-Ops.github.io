@@ -1,0 +1,115 @@
+name: Deploy to AWS
+on: [deployment]
+
+jobs:
+  deploy-to-aws:
+    runs-on: ubuntu-latest
+    env:
+      issue_number: '${{github.event.deployment.payload.issue}}'
+      cloud: '${{github.event.deployment.payload.cloud}}'
+      gprUrl: '${{github.event.deployment.payload.gprUrl}}'
+      customer: '${{github.event.deployment.payload.customer}}'
+      deployment_id: '${{github.event.deployment.id}}'
+
+    if:  startsWith(github.event.deployment.task, 'deploy-to-AWS')
+
+    steps:
+      - name: Announce deployment
+        uses: actions/github-script@0.5.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+            let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+            github.repos.createDeploymentStatus({
+              mediaType: {
+                previews: ["flash-preview", "ant-man"]
+              },
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deployment_id,
+              state: 'in_progress',
+              description: 'Kicking off deployment on ' + cloud + ' for ' + customer  + ' now.',
+              target_url: log_url,
+              log_url: log_url
+            })
+            github.issues.createComment({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ':rocket: Kicking off deployment on ' + cloud + ' for ' + customer + ' now. [View deployment live logs](' +  log_url + ').'
+            })
+      - uses: actions/checkout@master
+        with:
+          ref: '${{github.event.deployment.payload.customerNormalized}}'
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - name: Build Jekyll website
+        run: |
+          gem install bundler
+          bundle install
+          bundle exec jekyll build
+      - uses: jakejarvis/s3-sync-action@master
+        env:
+          SOURCE_DIR: "./_site"
+          AWS_REGION: "eu-west-1"
+          AWS_S3_BUCKET: "octogenerator-demo"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Update deploy success
+        if: (success())
+        uses: actions/github-script@0.5.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+            let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+            github.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deployment_id,
+              state: 'success',
+              description: 'Deployed successfully to ' + cloud + ' for ' +  customer,
+              environment_url: 'http://octogenerator-demo.s3-website-eu-west-1.amazonaws.com',
+              target_url: log_url,
+              log_url: log_url
+            })
+            github.issues.createComment({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ':white_check_mark: Deployed successfully to ' + cloud + ' for ' +  customer + ': ' + 'http://octogenerator-demo.s3-website-eu-west-1.amazonaws.com'
+            })
+            github.issues.addLabels({
+                issue_number: issue_number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ['deployed']
+            })
+
+      - name: Update deploy failure
+        if: (failure())
+        uses: actions/github-script@0.5.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+            let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+            github.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deployment_id,
+              state: 'failure',
+              description: 'Deployment to ' + cloud + ' failed for ' +  customer + ' :cry:',
+              target_url: log_url,
+              log_url: log_url
+            })
+            github.issues.createComment({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ':red_circle: Deployment to ' + cloud + ' failed for ' +  customer + ' :cry:. [View failed deployment logs](' + log_url + ').'
+            })

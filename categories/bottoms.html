@@ -1,0 +1,24 @@
+<div class="object-panel-wrap" id="cp-bottoms">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+
+            <div class="remove-category" data-category="bottoms">
+                <p class="sr-only">Remove object</p>
+            </div>
+
+            {% for item in site.data.bottoms %}
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}} {% endfor %}" data-category="bottoms" data-classes="{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}">
+                <span>
+                    <img class="preview" src="/objects/bottoms/icons/{{ item.icon }}" alt="{{ item.name }}" />
+                    <div class="object bottoms{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="bottoms{% if item.position == 'front' %}-front{% endif %}-holder" data-classes="{% for rule in item.rules %}{{rule.rule}} {% endfor %}">
+                        {% include_relative objects/bottoms/{{ item.image }} %}
+                    </div>
+                </span>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

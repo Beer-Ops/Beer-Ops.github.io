@@ -1,0 +1,80 @@
+name: Build and publish Docker image + Container Scanning
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    outputs:
+      dockerimage: ${{ steps.dockerimage.outputs.dockerimage }}
+      enablecontainerscanning: ${{ steps.enablecontainerscanning.outputs.enablecontainerscanning }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Test
+      run: |
+        npm install write-good
+        ./node_modules/.bin/write-good ${GITHUB_WORKSPACE}/README.md --parse
+    - name: Publish custom octocat
+      uses: actions/upload-artifact@v1
+      with:
+        name: custom-octocat-${{ github.sha }}
+        path: assets/images/base-octocat.svg
+    - name: Docker build, tag and push
+      id: dockerimage
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        ./cleanup.sh
+        docker login -u ${GITHUB_ACTOR} -p ${GITHUB_TOKEN} docker.pkg.github.com
+        docker build -t docker.pkg.github.com/${GITHUB_REPOSITORY,,}/octocat-generator-docker:${GITHUB_REF##*/} .
+        # curl -s -H "Authorization: Token ${GITHUB_TOKEN}" -H "Accept: application/json" -H "Content-type: application/json" -X POST -d "{ \"ref\": \"refs/tags/v-${${{ github.event.pull_request.head.ref }}}\", \"sha\": \"${GITHUB_SHA}\"}" https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs
+        docker push docker.pkg.github.com/${GITHUB_REPOSITORY,,}/octocat-generator-docker:${GITHUB_REF##*/}
+        echo "::set-output name=dockerimage::docker.pkg.github.com/${GITHUB_REPOSITORY,,}/octocat-generator-docker:${GITHUB_REF##*/}"
+    - name: Check whether container scanning should be enabled
+      id: enablecontainerscanning
+      env:
+          ENABLE_CONTAINER_SCANNING: ${{ secrets.OCTOCAT_GENERATOR_ENABLE_CONTAINER_SCANNING }}
+      run: |
+          echo "Enable container scanning: ${{ env.ENABLE_CONTAINER_SCANNING != '' }}"
+          echo "::set-output name=enablecontainerscanning::${{ env.ENABLE_CONTAINER_SCANNING != '' }}"
+  container-scan:
+    needs: [build]
+    if: needs.build.outputs.enablecontainerscanning == 'true'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Retrieve image
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        ./cleanup.sh
+        docker login -u ${GITHUB_ACTOR} -p ${GITHUB_TOKEN} docker.pkg.github.com
+        docker pull "${{ needs.build.outputs.dockerimage }}"
+    - uses: anchore/scan-action@master
+      with:
+        image-reference: "${{ needs.build.outputs.dockerimage }}"
+        dockerfile-path: "Dockerfile"
+        fail-build: false
+        acs-report-enable: true
+        acs-report-severity-cutoff: "Medium"
+    - name: anchore inline scan JSON results
+      run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
+    - name: anchore action SARIF report
+      run: cat results.sarif
+    - name: upload Anchore scan SARIF report
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: results.sarif

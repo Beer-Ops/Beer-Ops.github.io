@@ -1,0 +1,395 @@
+// ---------------------------------------------------------------------
+//  Tiles Category, Object & Color Swatch
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Tile
+// ----------------------------------------
+
+.tile {
+    position: relative;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: inherit;
+    width: 64px;
+    min-width: 64px;
+    height: 68px;
+    margin: 8px;
+    z-index: 1;
+    border: 1px solid $tile-border;
+    transition: transform $trans, border $trans;
+
+    @include start-at($xlarge) {
+        width: 84px;
+        min-width: 84px;
+        height: 88px;
+    }
+
+    span {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        background: $gray-light;
+        border: 1px solid $gray-light;
+        transition: border-color $trans, background $trans;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: -8px;
+        top: 3px;
+        background: url('../images/svgs/selected.svg') center / cover no-repeat;
+        z-index: 3;
+        transform: scale(0);
+        transition: transform 0.2s ease-in;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 6px;
+        z-index: -3;
+        transform: translate3d(0, 4px, 0);
+        transition: transform $trans, background $trans;
+        background: $tile-border;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: translate3d(0, 2px, 0);
+
+        &:after {
+            transform: translate3d(0, 2px, 0);
+        }
+    }
+
+    img {
+        width: 90px;
+    }
+
+    &.is-active {
+        border-color: $black;
+
+        span {
+            border-color: $black;
+            background: $white;
+        }
+        p {
+            color: $black;
+        }
+        &:before {
+            transform: scale(1);
+        }
+        &:after {
+            background: $black;
+        }
+    }
+
+}
+
+
+// ----------------------------------------
+// Category Tile
+// ----------------------------------------
+
+.category-tile {
+    width: 40px;
+    min-width: 40px;
+    height: 44px;
+
+    img {
+        max-height: 26px;
+        width: auto;
+    }
+
+    &.disabled {
+        filter: grayscale(100%);
+        opacity: 0.4;
+        pointer-events: none;
+
+        &:hover {
+            cursor: default;
+        }
+    }
+
+    @include stop-at($panel-bp) {
+        margin: 0 4px;
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+
+        img {
+            max-height: 40px;
+        }
+
+        &:before {
+            top: auto;
+            bottom: -4px;
+            right: -4px;
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    @include start-at($panel-bp) {
+        //width: 194px;
+        width: 100%;
+        border: 1px solid $tile-border;
+        background: $gray-light;
+        height: 40px;
+        margin: 0 0 8px;
+
+        &:before {
+            top: calc(50% - 9px);
+            right: 8px;
+        }
+
+        span {
+            justify-content: flex-start;
+        }
+
+        img {
+            max-height: 48px;
+        }
+    }
+
+    @include start-at($xlarge) {
+        height: 60px;
+
+        img {
+            max-height: 88px;
+            height: 66px;
+        }
+    }
+}
+
+
+
+
+
+
+// ----------------------------------------
+// Object Preview Tile
+// ----------------------------------------
+
+$object-preview-size-xs: 76px;
+$object-preview-size: 82px;
+
+
+.remove-category {
+    position: relative;
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    transition: background $trans;
+    background: $gray-light;
+
+    display: none;
+
+    @include start-at($panel-bp) {
+        margin: 6px auto;
+    }
+
+    // @include start-at($small) {
+    //     margin: 0 2px;
+    // }
+    //
+    // @include start-at($medium) {
+    //     margin: 0 6px;
+    // }
+
+    // @include start-at($large) {
+    //     width: $object-preview-size;
+    //     min-width: $object-preview-size;
+    //     height: $object-preview-size;
+    // }
+    //
+    // @media(max-height: 600px) {
+    //     width: $object-preview-size-xs;
+    //     min-width: $object-preview-size-xs;
+    //     height: $object-preview-size-xs;
+    // }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .no-touch & {
+        &:hover {
+            background: $off-white;
+        }
+    }
+
+    &.is-active {
+        background: $off-white;
+    }
+
+    .object {
+        display: none;
+    }
+
+    img {
+        max-height: 60px;
+        min-height: 60px;
+        pointer-events: none;
+    }
+}
+
+
+
+// ----------------------------------------
+// Color Swatches
+// ----------------------------------------
+
+.color-swatch-wrap {
+    border-radius: 4px;
+    margin: 0 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    margin: 0;
+
+    @include start-at($panel-bp) {
+        height: 52px;
+    }
+
+    @include start-at($xlarge) {
+        height: 72px;
+    }
+
+
+    &.is-active {
+        //background: $off-white;
+
+        .color-swatch span:before {
+            transform: scale(1);
+        }
+    }
+}
+
+
+$swatch-size: 44px;
+$swatch-size-xl: 64px;
+
+.color-swatch {
+    display: block;
+    width: $swatch-size;
+    min-width: $swatch-size;
+    height: 42px;
+    border-radius: 4px;
+    background: transparent;
+    position: relative;
+    margin: 0 5px;
+    z-index: 1;
+
+    @include start-at($large) {
+        margin: 0 6px;
+    }
+
+    @include start-at($xlarge) {
+        width: $swatch-size-xl;
+        min-width: $swatch-size-xl;
+        height: 62px;
+    }
+
+    span,
+    &:before,
+    &:after {
+        @include cover-parent;
+        display: block;
+        border-radius: 4px;
+        transition: transform $trans;
+    }
+
+    span {
+        background: currentColor;
+        z-index: 1;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: calc(50% - 10px);
+            top: calc(50% - 10px);
+            background: url('../images/svgs/checkmark-white.svg') center / 20px 15px no-repeat;
+            display: block;
+            z-index: 2;
+            pointer-events: none;
+            transform: scale(0);
+            transform-origin: center;
+            transition: transform 0.2s ease-in;
+        }
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        z-index: -2;
+        transform: translate3d(0, 4px, 0);
+
+    }
+
+    &:before {
+        background: currentColor;
+    }
+
+    &:after {
+        background: black;
+        opacity: 0.2;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        span {
+            transform: translate3d(0, 2px, 0);
+        }
+
+    }
+}
+
+
+// ----------------------------------------
+// Remove Category
+// ----------------------------------------
+
+.remove-category,
+.no-touch .remove-category {
+    opacity: 0.6;
+    transition: opacity $trans;
+
+    background: $white url('../images/svgs/remove.svg') center / 40px 40px no-repeat;
+
+    &:hover {
+        background: $white url('../images/svgs/remove.svg') center / 40px 40px no-repeat !important;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,87 @@
+## Optinal Rules for expressions:
+
+- name: Neutral
+  image: 07_EyeExpress_Neutral.svg
+  icon: 07-eyeexpress-neutral.svg
+  isActive: true
+  rules:
+    - rule:
+
+
+- name: Happy Closed
+  image: 01_EyeExpress_HappyClosed.svg
+  icon: 01-eyeexpresion-happyclosed.svg
+  rules:
+    - rule:
+
+- name: Happy Open
+  image: 02_EyeExpress_HappyOpen.svg
+  icon: 02-eyeexpression-happyopen.svg
+  rules:
+    - rule:
+
+- name: Sad
+  image: 03_EyeExpress_Sad.svg
+  icon: 03-eyeexpress-sad.svg
+  rules:
+    - rule:
+
+- name: Confused
+  image: 04_EyeExpress_Confused.svg
+  icon: 04-eyeexpress-confused.svg
+  rules:
+    - rule:
+
+- name: Excited Open
+  image: 05_EyeExpress_ExcitedOpen.svg
+  icon: 05-eyeexpress-excitedopen.svg
+  rules:
+    - rule:
+
+- name: Excited Closed
+  image: 06_EyeExpress_ExcitedClosed.svg
+  icon: 06-eyeexpress-excitedclosed.svg
+  rules:
+    - rule:
+
+- name: Tired
+  image: 08_EyeExpress_Tired.svg
+  icon: 08-eyeexpress-tired.svg
+  rules:
+    - rule:
+
+- name: Angry
+  image: 10_EyeExpress_Angry.svg
+  icon: 10-eyeexpress-angry.svg
+  rules:
+    - rule:
+
+- name: Chillin
+  image: 09_EyeExpress_Chillin.svg
+  icon: 09-eyeexpress-chillin.svg
+  rules:
+    - rule:
+
+- name: Winking
+  image: 15_EyeExpress_Winking.svg
+  icon: 15-eyeexpress-winking.svg
+  rules:
+    - rule:
+
+- name: Heart Eyes
+  image: 11_EyeExpress_HeartEyes.svg
+  icon: 11-eyeexpress-hearteyes.svg
+  rules:
+    - rule:
+
+- name: Starstruck
+  image: 12_EyeExpress_Starstruck.svg
+  icon: 12-eyeexpress-starstruck.svg
+  rules:
+    - rule:
+
+- name: Zany
+  image: 13_EyeExpress_Zany.svg
+  icon: 13-eyeexpress-zany.svg
+  rules:
+    - rule:

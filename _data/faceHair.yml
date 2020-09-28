@@ -1,0 +1,64 @@
+## Optinal Rules for faceHair:
+
+- name: Cowboy Mustache
+  image: 05_FacialHair_CowboyMustache_v01.svg
+  icon: facialhair-cowboymustache.svg
+  rules:
+    - rule:
+
+- name: DaliMustache
+  image: 08_FacialHair_DaliMustache_v02.svg
+  icon: facialhair-dalimustache.svg
+  rules:
+    - rule:
+
+- name: Mutton Chops
+  image: 04_FacialHair_MuttonChops_v02.svg
+  icon: facialhair-muttonchops.svg
+  position: low
+  moreObjects:
+      - object: 04_FacialHair_MuttonChops_v02-back.svg
+        position: back
+  rules:
+    - rule:
+
+- name: Wizard Beard
+  image: 01_FacialHair_WizardBeard_v02.svg
+  icon: facialhair-wizardbeard.svg
+  position: low
+  moreObjects:
+      - object: 01_FacialHair_WizardBeard_v02-back.svg
+        position: back
+  rules:
+    - rule:
+
+- name: Full Beard
+  image: 02_FacialHair_FullBeard_v03.svg
+  icon: facialhair-fullbeard.svg
+  position: low
+  moreObjects:
+      - object: 02_FacialHair_FullBeard_v03-back.svg
+        position: back
+  rules:
+    - rule:
+
+- name: Stubble shadow
+  image: 03_FacialHair_Stubble5Shadow_v02.svg
+  icon: facialhair-stubbleshadows.svg
+  position: back
+  rules:
+    - rule: back-facial-hair
+
+- name: Goatee
+  image: 06_FacialHair_Goatee_v01.svg
+  icon: facialhair-goatee.svg
+  position: back
+  rules:
+    - rule: back-facial-hair
+
+- name: Soul Patch
+  image: 07_FacialHair_SoulPatch_v01.svg
+  icon: facialhair-soulpatch.svg
+  position: back
+  rules:
+    - rule: back-facial-hair

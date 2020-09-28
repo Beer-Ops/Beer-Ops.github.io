@@ -1,0 +1,6 @@
+blank_issues_enabled: true
+
+contact_links:
+    - name: Latest provisioned environments
+      url: https://github.com/octodemo/octodemo.github.io/deployments
+      about: Latest provisioned environments

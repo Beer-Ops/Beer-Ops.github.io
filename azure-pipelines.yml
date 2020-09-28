@@ -1,0 +1,41 @@
+resources:
+- repo: self
+
+trigger:
+- master
+
+steps:
+- script: ./cleanup.sh
+  displayName: Clean Up
+
+- script: docker login -u $(gpr_user) -p $(gpr_pat) docker.pkg.github.com
+  displayName: Logging into GitHub Package Registry
+  
+- script: docker build -t docker.pkg.github.com/$(Build.Repository.ID)/octocat-generator:$(Build.BuildNumber) .
+  displayName: Building Docker image
+  
+- script: docker push docker.pkg.github.com/$(Build.Repository.ID)/octocat-generator:$(Build.BuildNumber)
+  displayName: Pushing Docker image to GitHub Package Repository
+
+
+- task: Docker@0
+  displayName: Run Jekyll
+  inputs:
+    action: 'Run an image'
+    imageName: 'jekyll/minimal:3.8.5'
+    volumes: |
+     $(Build.SourcesDirectory):/srv/jekyll
+     $(Build.BinariesDirectory):/srv/jekyll/_site
+    containerCommand: 'jekyll build --future'
+    detached: false
+
+- task: ArchiveFiles@1
+  displayName: Archive Files
+  inputs:
+    includeRootFolder: false
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Site
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    ArtifactName: www

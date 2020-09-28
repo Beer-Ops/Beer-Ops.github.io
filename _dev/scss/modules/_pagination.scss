@@ -1,0 +1,102 @@
+// ---------------------------------------------------------------------
+//  Pagination Styles
+// ---------------------------------------------------------------------
+
+// Set to work with WP
+
+.pagination {
+    width: 100%;
+    overflow: hidden;
+    height: 50px;
+    background: $gray-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 564px;
+    margin: 0 auto 20px;
+
+    @include start-at($medium) {
+        margin: 20px auto 40px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        > * {
+    		font-size: 1.4rem;
+    		color: $gray;
+    		padding: 5px 10px;
+    		text-transform: uppercase;
+            transition: color $transition;
+        }
+
+        a:hover,
+        .current {
+            color: $brand;
+        }
+
+        .next.page-numbers,
+        .prev.page-numbers {
+            position: absolute;
+            top: calc(50% - 17px);
+            height: 35px;
+            svg {
+                fill: $brand;
+            }
+        }
+        .next.page-numbers {
+            right: 20px;
+        }
+        .prev.page-numbers {
+            left: 20px;
+        }
+    }
+}
+
+.pagination__prev {
+    width: 25%;
+}
+
+.pagination__next {
+    width: 25%;
+    text-align: right;
+}
+
+.pagination__numbers {
+    width: 50%;
+    text-align: center;
+
+    > * {
+        max-width: 288px;
+        margin: 0 auto;
+    }
+
+    li > * {
+        display: block;
+        padding: 8px 14px;
+    }
+}
+
+.pagination svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 24px;
+    fill: $black;
+}
+
+.pagination__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 8px;
+}
+
+@include stop-at($small) {
+    .pagination__text {
+        @include visually-hidden;
+    }
+}

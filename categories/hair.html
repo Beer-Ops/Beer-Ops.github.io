@@ -1,0 +1,45 @@
+
+<div class="object-panel-wrap object-panel-wrap--double" id="cp-hair">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+            <div class="remove-category" data-category="hair">
+                <p class="sr-only">Remove object</p>
+            </div>
+
+            {% for item in site.data.hair %}
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}} {% endfor %}" data-category="hair" data-classes="hair,{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}">
+                <span>
+                    <img class="preview" src="/objects/hair/icons/{{ item.icon }}" alt="{{ item.name }}" />
+
+                    <div class="object hair{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="hair{% if item.position %}-{{ item.position }}{% endif %}-holder">
+                        {% include_relative objects/hair/{{ item.image }} %}
+                    </div>
+
+                    {% if item.moreObjects %}
+                    {% for object in item.moreObjects %}
+                    <div class="object hair{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="hair-front-holder" data-classes="{% for rule in item.rules %}{{rule.rule}} {% endfor %}">
+                        {% include_relative objects/hair/{{ object.object }} %}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% include arrows.html %}
+    </div>
+
+
+    <div class="object-panel object-panel__colors" id="hair-color">
+        <div class="object-panel__inner">
+            {% for item in site.data.hairColor %}
+            <div class="color-swatch-wrap{% if item.isActive %} is-active{% endif %}">
+                <span class="color-swatch{% if item.isActive %} last-item{% endif %}" data-color="#{{ item.color }}"><span></span></span>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

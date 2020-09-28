@@ -1,0 +1,255 @@
+
+// ---------------------------------------------------------------------
+//  Wrapper Styles (Horizontal Spacing)
+// ---------------------------------------------------------------------
+
+.wrapper {
+    @include wrapper;
+}
+
+.wrapper-wide {
+    @include wrapper;
+    max-width: $xlarge;
+}
+
+.wrapper-full {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.wrapper-full--brand {
+    background: $brand;
+}
+
+// ----------------------------------------
+// Extensions
+// ----------------------------------------
+
+.wrapper--thin {
+    max-width: 720px;
+}
+
+
+// ----------------------------------------
+// intro
+// ----------------------------------------
+
+.octocat-intro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    z-index: 1;
+    padding: 36px 0;
+
+    @include start-at($small) {
+        min-height: calc(100vh - 72px);
+        padding: 72px 0 12px;
+    }
+
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        background: $off-white;
+        z-index: -2;
+    }
+    &:before {
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+    }
+
+    &:after {
+        content: '';
+        background: $off-white;
+        width: 200%;
+        height: 0;
+        padding-bottom: 200%;
+        bottom: 0;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+        border-radius: 50%;
+
+        @include start-at($medium) {
+            padding-bottom: 100%;
+        }
+    }
+
+    p {
+        max-width: 540px;
+    }
+
+
+
+}
+
+.octocat-intro__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    .octocat-intro__octocat-sm {
+        max-width: 120px;
+        margin: 0 auto;
+
+        @include stop-at($small) {
+            img {
+                transform: translateX(12px);
+            }
+        }
+
+        @include start-at($small) {
+            display: none;
+        }
+    }
+
+}
+
+.octocat-intro__octocat {
+    position: relative;
+
+    img {
+        max-height: 100%;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+    }
+
+    @include stop-at($small) {
+        display: none;
+    }
+}
+
+
+#draw-svg {
+    display: inline-block;
+    overflow: visible;
+    max-width: 50px;
+    margin: 0 auto;
+}
+
+
+
+// ----------------------------------------
+// intro
+// ----------------------------------------
+
+#how-it-works {
+    overflow: hidden;
+}
+
+
+@include stop-at($small) {
+    .wrapper-scroll-sm-wrap {
+        width: 100%;
+        overflow: hidden;
+        //overflow-x: scroll;
+        //overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        position: relative;
+        background: $off-white;
+        padding: 24px 0 12px;
+
+        &:hover {
+            cursor: grab;
+
+            // * {
+            //     pointer-events: none;
+            // }
+        }
+
+        &.dragging,
+        &.dragging:hover {
+            cursor: grabbing;
+
+            // * {
+            //     pointer-events: none;
+            // }
+        }
+
+        * {
+        //    pointer-events: none;
+            user-select: none;
+        }
+
+        &::-webkit-scrollbar {
+            width: 100%;
+            height: 8px;
+            background: $gray-light;
+        }
+
+        &::-webkit-scrollbar-track {
+            height: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $brand;
+            height: 2px;
+            border-radius: 1px;
+        }
+
+
+    }
+
+    .wrapper-scroll-sm {
+        display: flex;
+        justify-content: space-between;
+        width: 300%;
+        overflow: hidden;
+        pointer-events: none;
+
+        > * {
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+    }
+
+
+}
+
+@include start-at($small) {
+    .wrapper-scroll-sm {
+        @include wrapper;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.wrapper-scroll--scroll-right,
+.wrapper-scroll--scroll-left {
+    display: block;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    z-index: 4;
+    top: calc(50% - 22px);
+
+    &.disabled {
+        opacity: 0.3;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include start-at($small) {
+        display: none;
+    }
+}
+
+.wrapper-scroll--scroll-right {
+    right: 12px;
+}
+
+.wrapper-scroll--scroll-left {
+    left: 12px;
+}

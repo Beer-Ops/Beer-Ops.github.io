@@ -1,0 +1,93 @@
+// ---------------------------------------------------------------------
+//  SCSS Settings
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Fonts
+// ----------------------------------------
+
+// Font weights: 400 | 700
+$sans-serif: 'SFUI-text', mono, sans-serif;
+$sans-serif-headline: 'SFUI-text', mono, sans-serif;
+
+$display: 'Bungee', 'Impact', sans-serif;
+
+// ----------------------------------------
+// Font Size/ Line Height
+// ----------------------------------------
+$main-font: $sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.6;
+
+
+// ----------------------------------------
+// Colors
+// ----------------------------------------
+
+
+$brand: #28A745; // Green
+$brand-dark: #176F2C;
+
+$green: #28A745;
+
+$blue: #1DA1F2;
+$blue-dark: #126597;
+
+$purple: #6F42C1;
+$purple-dark: #452979;
+
+$white: #ffffff;
+$off-white: #F6F8FA;
+
+$gray-light: #ECEFF1;
+$tile-border: #CAD0D4;
+$gray-md: #E3E6E6;
+
+$gray: #62676D;
+$gray-dark: #444A50;
+
+$black: #24292E;
+
+$gray: #666;
+
+$error: #FF3333;
+
+
+// ----------------------------------------
+// Breakpoints
+// ----------------------------------------
+
+$xlarge: 2020px;
+$large: 1025px;
+$medium: 800px;
+$small: 600px;
+
+@mixin start-at($device-width) {
+  @media (min-width: $device-width) {
+    @content;
+  }
+}
+
+@mixin stop-at($device-width) {
+  @media (max-width: $device-width - 1) {
+    @content;
+  }
+}
+
+$panel-bp: $medium;
+
+// ----------------------------------------
+// Global Variables
+// ----------------------------------------
+
+$header-breakpoint: $small;
+
+$transition-speed: 0.4s;
+$transition: $transition-speed ease;
+// cuz I no type good
+$trans: $transition-speed ease;
+
+$wrapper-percentage: 94%;
+$wrapper-width: 1264px;
+$wrapper-padding: (100% - $wrapper-percentage) / 2;

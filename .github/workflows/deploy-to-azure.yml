@@ -1,0 +1,146 @@
+name: Deploy to Azure
+on: [deployment]
+
+jobs:
+  deploy-to-azure:
+    name: Deploy to Azure
+    runs-on: ubuntu-latest
+    env:
+      issue_number: '${{github.event.deployment.payload.issue}}'
+      cloud: '${{github.event.deployment.payload.cloud}}'
+      gprUrl: '${{github.event.deployment.payload.gprUrl}}'
+      customer: '${{github.event.deployment.payload.customer}}'
+      deployment_id: '${{github.event.deployment.id}}'
+      TF_VAR_subscription_id: ${{ secrets.AZ_SUBSCRIPTION_ID }}
+      TF_VAR_client_id: ${{ secrets.AZ_CLIENT_ID }}
+      TF_VAR_client_secret: ${{ secrets.AZ_CLIENT_SECRET }}
+      TF_VAR_tenant_id: ${{ secrets.AZ_TENANT_ID }}
+      TF_VAR_github_pat: ${{ secrets.GITHUB_TOKEN }}
+      TF_VAR_gpr_url: ${{github.event.deployment.payload.gprUrl}}
+      TF_VAR_github_user: ${{ github.actor }}
+
+    if:  startsWith(github.event.deployment.task, 'deploy-to-Azure')
+    steps:
+    - name: Announce deployment
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+          let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+          github.repos.createDeploymentStatus({
+            mediaType: {
+              previews: ["flash-preview", "ant-man"]
+            },
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment_id,
+            state: 'in_progress',
+            description: 'Kicking off deployment on ' + cloud + ' for ' + customer  + ' now.',
+            target_url: log_url,
+            log_url: log_url
+          })
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: ':rocket: Kicking off deployment on ' + cloud + ' for ' + customer + ' now. [View deployment live logs](' +  log_url + ').'
+          })
+    - name: 'Checkout'
+      if: (false)
+      uses: actions/checkout@master
+    - name: 'Terraform Format'
+      if: (false)
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'fmt'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: 'Terraform Init'
+      if: (false)
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'init'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: 'Terraform Validate'
+      if: (false)
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'validate'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: 'Terraform Plan'
+      if: (false)
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'plan'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 'Terraform Apply'
+      if: (false)
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.12.13
+        tf_actions_subcommand: 'apply'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Update deploy success
+      if: (success())
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+          let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+          github.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment_id,
+            state: 'success',
+            description: 'Deployed successfully to ' + cloud + ' for ' +  customer,
+            environment_url: 'https://octocatgenerator.z6.web.core.windows.net/',
+            target_url: log_url,
+            log_url: log_url
+          })
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: ':white_check_mark: Deployed successfully to ' + cloud + ' for ' +  customer + ': ' + 'https://octocatgenerator.z6.web.core.windows.net/'
+          })
+          github.issues.addLabels({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['deployed']
+          })
+    - name: Update deploy failure
+      if: (failure())
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer, deployment_id } = process.env;
+          let log_url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/` + process.env.GITHUB_RUN_ID
+          github.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment_id,
+            state: 'failure',
+            description: 'Deployment to ' + cloud + ' failed for ' +  customer + ' :cry:',
+            target_url: log_url,
+            log_url: log_url
+          })
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: ':red_circle: Deployment to ' + cloud + ' failed for ' +  customer + ' :cry:. [View failed deployment logs](' + log_url + ').'
+          })

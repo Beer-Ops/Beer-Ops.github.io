@@ -1,0 +1,53 @@
+name: Destroy from GCP
+on:
+    repository_dispatch:
+      types: [destroy-selfhosted]
+env:
+  NAME_RUNNER: "ghe-runner-gcp-${{github.event.client_payload.issue}}"
+
+jobs:
+  destroy-runner-and-vm:
+    runs-on: ubuntu-latest
+    steps:
+    
+    # Setup gcloud CLI
+    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '281.0.0'
+        service_account_email: ${{ secrets.SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+    - run: gcloud projects list
+
+    - run: |
+        gcloud config set project octodemo
+        
+    - name: get runner id
+      run: |
+        echo ::set-env name=RUNNER_ID::$(curl --location --request GET 'https://api.github.com/repos/${{ github.repository }}/actions/runners'  --header 'Authorization: token ${{ secrets.RDP_TOKEN }}' | jq '.runners[0].id')
+
+    - name: delete runner from repo
+      run: |
+        curl --location --request DELETE "https://api.github.com/repos/${{ github.repository }}/actions/runners/$RUNNER_ID" --header 'Authorization: token ${{ secrets.RDP_TOKEN }}' 
+    - name: delete vm
+      run: |
+        gcloud compute instances delete ${{ env.NAME_RUNNER }} --zone=europe-west3-c --quiet
+        
+    - name: Update issue
+      env:
+        issue_number: '${{github.event.client_payload.issue}}'
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number } = process.env;
+          github.issues.createComment({
+            ...context.repo,
+            issue_number: issue_number,
+            body: 'Destroyed self-hosted runner successfully!'
+          })
+          github.issues.removeLabel({
+            ...context.repo,
+            issue_number: issue_number,
+            name: 'deployed'
+          })

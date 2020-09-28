@@ -1,0 +1,277 @@
+// ---------------------------------------------------------------------
+//  Gallery
+// ---------------------------------------------------------------------
+
+.gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-row-gap: 12px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @include start-at($medium) {
+        grid-template-columns: repeat(4, 25%);
+        grid-row-gap: 12px;
+    }
+
+    @include start-at($xlarge) {
+        grid-template-columns: repeat(5, 20%);
+        grid-row-gap: 12px;
+    }
+
+    .gallery-item {
+        padding: 0 6px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+/* The Modal (background) */
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding: 24px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba($black, 0.8);
+}
+
+/* Modal Content */
+.gallery-modal-content {
+    position: absolute;
+    background-color: rgba($black, 0.8);
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    .gallery-slides {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: 24px 0;
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* The Close Button */
+.gallery__close {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    z-index: 99;
+    width: 44px;
+    height: 44px;
+    background: url('../images/svgs/close.svg') center / 12px 12px no-repeat;
+    transition: opacity $trans;
+
+    @include start-at($medium) {
+        right: 25px;
+        background: url('../images/svgs/close-white.svg') center / 12px 12px no-repeat;
+    }
+
+    &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+    }
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.gallery-slides {
+  display: none;
+
+  img {
+      max-height: 100%;
+  }
+}
+
+/* Next & previous buttons */
+.gallery__prev,
+.gallery__next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    color: $white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.6s ease;
+    height: 64px;
+    width: 44px;
+    user-select: none;
+    -webkit-user-select: none;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+
+    transition: opacity $trans;
+
+    &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+    }
+}
+
+.gallery__prev {
+    left: 0;
+    background:  url('../images/svgs/arrow-left.svg') center / 12px 18px no-repeat;
+
+    @include start-at($medium) {
+        left: 25px;
+        background:  url('../images/svgs/arrow-left-white.svg') center / 12px 18px no-repeat;
+    }
+}
+.gallery__next {
+    right: 0;
+    background:  url('../images/svgs/arrow-right.svg') center / 12px 18px no-repeat;
+
+    @include start-at($medium) {
+        right: 25px;
+        background:  url('../images/svgs/arrow-right-white.svg') center / 12px 18px no-repeat;
+    }
+}
+
+
+.gallery-slides__count {
+    color: #f2f2f2;
+    font-size: 12px;
+    position: absolute;
+    top: 22px;
+    left: 24px;
+    font-family: $sans-serif;
+}
+
+
+.gallery__caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: $white;
+}
+//
+// // ----------------------------------------
+// // Gallery 1
+// // ----------------------------------------
+//
+// .gallery--1 {
+//     @include start-at($medium) {
+//
+//         > li:nth-child(7n + 7) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//
+//         > li:nth-child(19) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//
+//         > li:nth-child(20) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//    }
+//
+// }
+//
+// // ----------------------------------------
+// // Gallery 2
+// // ----------------------------------------
+//
+// .gallery--2 {
+//     @include start-at($medium) {
+//         > li:nth-child(18n + 1) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//
+//         > li:nth-child(6),
+//         > li:nth-child(26),
+//         > li:nth-child(32),
+//         > li:nth-child(28),
+//         > li:nth-child(50),
+//         > li:nth-child(51)  {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//         > li:nth-child(12n + 7) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//   }
+// }
+//
+//
+// // ----------------------------------------
+// // gallery 3
+// // ----------------------------------------
+// .gallery--3 {
+//     @include start-at($medium) {
+//         > li:nth-child(16n + 3),
+//         > li:nth-child(22n + 4),
+//         > li:nth-child(26),
+//         > li:nth-child(42),
+//         > li:nth-child(43),
+//         > li:nth-child(93),
+//         > li:nth-child(145) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//     }
+// }
+//
+//
+// // ----------------------------------------
+// // Gallery 4
+// // ----------------------------------------
+//
+// .gallery--4 {
+//     @include start-at($medium) {
+//         > li:nth-child(7n + 5) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//
+//         > li:nth-child(19) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//
+//         > li:nth-child(20) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//
+//         > li:nth-child(27) {
+//             grid-row-end: span 2;
+//             grid-column-end: span 2;
+//         }
+//     }
+// }

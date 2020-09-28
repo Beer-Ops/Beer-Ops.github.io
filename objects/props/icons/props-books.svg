@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="49px" viewBox="0 0 49 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>props-books</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-1011.000000, -353.000000)"></g>
+        <g id="books" transform="translate(14.559241, 14.000000)" fill-rule="nonzero">
+            <path d="M0.567773361,19.972315 L1.65719457,21.8169311 L4.51480858,21.8169311 M5.31829305,21.8169311 L19.5621104,21.8169311 L19.5621104,2.58002849 L14.764007,2.58002849" id="Path-82" stroke="#7C3FB5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <polygon id="Path-83" stroke="#C8BEF3" fill="#C8BEF3" stroke-linejoin="round" points="16.8235145 0.298347226 18.9677839 2.33346045 18.9677839 21.104766 1.75858484 21.104766 0.683355295 19.2143563 0.683355295 0.298347226"></polygon>
+            <polyline id="Path-84" stroke="#2AB293" fill="#2AB192" stroke-linejoin="round" points="2.31983451 19.5828687 2.31983451 24.6834525 4.25387573 22.7494113 6.2493967 24.7449322 6.2493967 19.5828687"></polyline>
+            <rect id="Rectangle-24" stroke="#7C3FB5" fill="#7C3FB5" stroke-linecap="square" stroke-linejoin="round" x="5.31603753" y="0" width="12.3381885" height="19.7051967"></rect>
+            <rect id="Rectangle-25" stroke="#38145B" fill="#38145B" stroke-linecap="round" stroke-linejoin="round" x="0.139484506" y="0" width="5.67447786" height="19.7051967"></rect>
+            <rect id="Rectangle-26" stroke="#38145B" fill="#38145B" x="7.77648063" y="2.07827239" width="1.549089" height="2.30944868"></rect>
+            <rect id="Rectangle-26-Copy" stroke="#38145B" fill="#38145B" x="7.77648063" y="8.69787403" width="1.549089" height="2.30944868"></rect>
+            <rect id="Rectangle-26-Copy-2" stroke="#38145B" fill="#38145B" x="7.77648063" y="14.7381272" width="1.549089" height="2.30944868"></rect>
+        </g>
+    </g>
+</svg>

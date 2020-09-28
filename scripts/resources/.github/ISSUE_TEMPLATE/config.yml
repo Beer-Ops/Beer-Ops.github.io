@@ -1,0 +1,6 @@
+blank_issues_enabled: true
+
+contact_links:
+    - name: Latest provisioned environment (CLOUD)
+      url: URL
+      about: Latest provisioned environment for CUSTOMER

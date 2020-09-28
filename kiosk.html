@@ -1,0 +1,37 @@
+---
+layout: default
+title: Build your Octocat
+id: kiosk-octocat-generator
+permalink: /kiosk/build-your-octocat/
+---
+
+
+<div id="octocat-generator">
+
+    {% include controlPanel.html %}
+
+    <div id="artboard">
+        {% include octocat.html %}
+    </div>
+
+    <nav id="control-panel">
+        {% include categories.html %}
+        <div id="object-nav">
+            {% include_relative categories/face.html %}
+            {% include_relative categories/body.html %}
+            {% include_relative categories/eyes.html %}
+            {% include_relative categories/mouths.html %}
+            {% include_relative categories/hair.html %}
+            {% include_relative categories/headgear.html %}
+            {% include_relative categories/tops.html %}
+            {% include_relative categories/bottoms.html %}
+            {% include_relative categories/footwear.html %}
+            {% include_relative categories/props.html %}
+            {% include_relative categories/eyewear.html %}
+            {% include_relative categories/faceHair.html %}
+            {% include_relative categories/misc.html %}
+        </div>
+    </nav>
+</div>
+
+{% include modals.html %}

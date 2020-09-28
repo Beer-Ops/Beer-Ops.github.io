@@ -1,0 +1,261 @@
+## Optinal Rules for tops:
+
+
+- name: Lederhosen
+  image: 32_Top_Lederhosen_v1.svg
+  icon: Top_Lederhosen.svg
+  rules:
+    - rule:
+
+- name: Dirndl
+  image: 33_Top_Dirndl_v1.svg
+  icon: Top_Dirndl.svg
+  rules:
+    - rule:
+
+- name: Football Jersey
+  image: 34_Top_GermanFootballJersey_v1.svg
+  icon: Top_GermanFootballJersey.svg
+  rules:
+    - rule:
+
+- name: Kraftwerk Shirt
+  image: 35_Top_KraftwerkShirt_v1.svg
+  icon: tops-kraftwerkShirt.svg
+  rules:
+    - rule:
+
+- name: Tracksuit
+  image: 36_Top_AdidasTracksuit_v1.svg
+  icon: tops-adiddastracksuit.svg
+  rules:
+    - rule:
+
+- name: Astronaut
+  image: 37_Top_Astronaut_v1.svg
+  icon: Top_Astronaut.svg
+  rules:
+    - rule:
+
+- name: T shirt
+  image: 38_Top_NewTshirt_v1.svg
+  icon: Top_NewTshirt.svg
+  rules:
+    - rule:
+
+- name: Button Up
+  image: 39_Top_NewButtonUp_v1.svg
+  icon: tops-NewButtonUP.svg
+  rules:
+    - rule:
+
+- name: Dress
+  image: 40_Top_NewDress_v1.svg
+  icon: Top_NewDress.svg
+  rules:
+    - rule: no-pants
+
+- name: Poncho
+  image: 41_Top_Poncho_v1.svg
+  icon: Top_Pancho.svg
+  rules:
+    - rule:
+
+- name: Retro Dress
+  image: 42_Top_NewRetroDress_v1.svg
+  icon: Top_NewRetroDress.svg
+  rules:
+    - rule:
+
+
+
+
+- name:
+  image: 01_Top_Cowboy_Vest_Shirt_v01.svg
+  icon: tops-cowboyvest.svg
+  rules:
+    - rule:
+
+- name:
+  image: 02_Tops_Hippie_Shirt.svg
+  icon: tops-hippieshirt.svg
+  rules:
+    - rule:
+
+- name:
+  image: 03_Top_BiznessSuit_JacketShirtTie.svg
+  icon: tops-businesssuit.svg
+  rules:
+    - rule:
+
+- name:
+  image: 04_Top_Ski_Jacket_v01.svg
+  icon: tops-ski-jacket.svg
+  rules:
+    - rule: big-collar
+    #- rule: no-shorts
+
+
+- name:
+  image: 05_Top_Cyclist_Shirt_v01.svg
+  icon: tops-cyclistshirt.svg
+  rules:
+    - rule:
+
+
+- name:
+  image: 06_Top_PJs_Shirt_v01.svg
+  icon: tops-pjs-shirt.svg
+  rules:
+    - rule:
+
+
+- name:
+  image: 07_Top_SuperHero_Tights.svg
+  icon: tops-Superherotights.svg
+  rules:
+    - rule:
+
+- name:
+  image: 08_Top_Firefighter_Jacket_v01.svg
+  icon: tops-firefighter-jacket.svg
+  rules:
+    - rule: big-collar
+    #- rule: no-shorts
+
+- name:
+  image: 09_Top_Wizard_Robe_v01.svg
+  icon: tops-wizard-robe.svg
+  rules:
+    - rule: no-pants
+
+
+- name:
+  image: 11_Top_Scuba_Wetsuit_v01.svg
+  icon: tops-scuba-wetsuit.svg
+  rules:
+    - rule:
+
+- name:
+  image: 12_Top_Dancer_Tights.svg
+  icon: tops-dancertights.svg
+  rules:
+    - rule:
+
+
+- name:
+  image: 13_Top_BunnySuit_v01.svg
+  icon: tops-bunny-suit.svg
+  rules:
+    - rule:
+
+- name:
+  image: 14_Top_ArmorSuit_v01.svg
+  icon: tops-armorsuit.svg
+  rules:
+    - rule:
+
+
+- name:
+  image: 15_Top_Tunic.svg
+  icon: tops-tunic.svg
+  rules:
+    - rule: no-xxl-pants
+
+- name:
+  image: 16_Top_ZipUp_Hoodie.svg
+  icon: tops-zipuphoodie.svg
+  rules:
+    - rule:
+
+- name:
+  image: 17_Top_ButtonDownLong_Shirt.svg
+  icon: tops-buttondownlongshirt.svg
+  rules:
+    - rule: no-xxl-pants
+
+- name:
+  image: 18_Top_ButtonDownShort_Shirt.svg
+  icon: tops-buttondownshortshirt.svg
+  rules:
+    - rule:
+
+- name:
+  image: 19_Top_SportsJersey.svg
+  icon: tops-sportsjersey.svg
+  rules:
+    - rule:
+
+
+- name:
+  image: 20_Top_GitHubPride_Shirts_v01.svg
+  icon: tops-githubpride-shirts.svg
+  rules:
+    - rule:
+
+- name:
+  image: 21_Top_TankTop_Shirt.svg
+  icon: tops-tanktop.svg
+  rules:
+    - rule:
+
+- name:
+  image: 22_Top_Lab_Coat.svg
+  icon: tops-labcoat.svg
+  rules:
+    - rule: no-xl-pants
+    - rule: no-shorts
+
+- name:
+  image: 23_Top_Leather_Jacket.svg
+  icon: tops-leatherjacket.svg
+  rules:
+    - rule:
+
+- name:
+  image: 24_Top_Flannel_Shirt.svg
+  icon: tops-flannelshirt.svg
+  rules:
+    - rule: no-xxl-pants
+
+- name:
+  image: 25_Top_Mini_Dress.svg
+  icon: tops-minidress.svg
+  rules:
+    - rule: no-xxl-pants
+
+- name:
+  image: 26_Top_Midi_Dress.svg
+  icon: tops-mididress.svg
+  rules:
+    - rule: no-pants
+
+- name:
+  image: 27_Top_Maxi_Dress.svg
+  icon: tops-maxidress.svg
+  rules:
+    - rule: no-pants
+
+- name:
+  image: 28_Top_Hawaiian_Shirt.svg
+  icon: tops-hawaiianshirt.svg
+  rules:
+    - rule: no-xxl-pants
+
+- name:
+  image: 29_Top_CropTop_Blouse.svg
+  icon: tops-croptopblouse.svg
+  rules:
+    - rule:
+
+- name:
+  image: 30_Top_Barbarian_FurVest.svg
+  icon: tops-barbarianvest.svg
+  rules:
+    - rule:
+
+- name:
+  image: 31_Top_Overalls_v01.svg
+  icon: tops-overalls.svg
+  rules:
+    - rule:

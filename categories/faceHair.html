@@ -1,0 +1,47 @@
+<div class="object-panel-wrap object-panel-wrap--double" id="cp-faceHair">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+            <div class="remove-category" data-category="faceHair">
+                <p class="sr-only">Remove object</p>
+            </div>
+
+            {% for item in site.data.faceHair %}
+
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}}{% endfor %}" data-category="faceHair" data-classes="{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}">
+                <span>
+                    <img class="preview" src="/objects/faceHair/icons/{{ item.icon }}" alt="{{ item.name }}" />
+
+                    <div class="object faceHair{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="faceHair{% if item.position %}-{{ item.position }}{% endif %}-holder" data-classes="{% for rule in item.rules %}{{rule.rule}} {% endfor %}">
+                        {% include_relative objects/faceHair/{{ item.image }} %}
+                    </div>
+
+
+                    {% if item.moreObjects %}
+                    {% for object in item.moreObjects %}
+                    <div class="object faceHair{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="faceHair{% if object.position %}-{{ object.position }}{% endif %}-holder">
+                        {% include_relative objects/faceHair/{{ object.object }} %}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </span>
+            </div>
+
+            {% endfor %}
+        </div>
+
+        {% include arrows.html %}
+    </div>
+
+
+    <div class="object-panel object-panel__colors" id="facehair-color">
+        <div class="object-panel__inner">
+            {% for item in site.data.hairColor %}
+            <div class="color-swatch-wrap">
+                <span class="color-swatch{% if item.isActive %} last-item{% endif %}" data-color="#{{ item.color }}"><span></span></span>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% include arrows.html %}
+    </div>
+</div>

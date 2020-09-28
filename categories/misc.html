@@ -1,0 +1,21 @@
+<div class="object-panel-wrap" id="cp-misc">
+    <div class="object-panel object-panel__objects">
+        <div class="object-panel__inner">
+            <div class="remove-category" data-category="misc" id="rand-clear-misc">
+                <p class="sr-only">Remove object</p>
+            </div>
+            {% for item in site.data.misc %}
+            <div class="tile object-preview {% for rule in item.rules %}{{rule.rule}} {% endfor %}" data-category="misc" id="misc-{{ item.name | slugify }}" data-classes="{% for rule in item.rules %}{{rule.rule}}{% if forloop.last == false %},{% endif %}{% endfor %}">
+                <span>
+                    <img class="preview" src="/objects/misc/icons/{{ item.icon }}" alt="{{ item.name }}" />
+
+                    <div class="object misc{% for rule in item.rules %} {{rule.rule}}{% endfor %}" data-holder="misc{% if item.position %}-{{ item.position }}{% endif %}-holder" data-classes="{% for rule in item.rules %}{{rule.rule}} {% endfor %}">
+                        {% include_relative objects/misc/{{ item.image }} %}
+                </div>
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+        {% include arrows.html %}
+    </div>
+</div>

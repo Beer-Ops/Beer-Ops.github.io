@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="49px" viewBox="0 0 49 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>props-prosthetichand</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SVGs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-1134.000000, -353.000000)"></g>
+        <g id="Group-39" transform="translate(17.720496, 12.000000)" fill-rule="nonzero">
+            <rect id="Rectangle-27" fill="#1E1952" x="0.753585266" y="18.5452119" width="10.5186147" height="1" rx="0.5"></rect>
+            <polygon id="Rectangle-31" fill="#1E1952" points="1.92232023 17.6313196 10.4430295 17.6313196 10.4430295 21.1375245 1.92232023 21.1375245"></polygon>
+            <rect id="Rectangle-27-Copy" fill="#1E1952" x="0.753585266" y="19.934001" width="10.5186147" height="1" rx="0.5"></rect>
+            <rect id="Rectangle-30" fill="#1E1952" x="3.85248654" y="1.56309392" width="4.67493987" height="1.16873497"></rect>
+            <rect id="Rectangle-29" stroke="#1E1952" fill="#1E1952" x="1.83795275" y="5.85960244" width="8.34987975" height="1"></rect>
+            <polygon id="Rectangle-28" stroke="#94A7EE" fill="#94A7EE" stroke-linecap="round" stroke-linejoin="round" points="3.20445255 2.62468585 9.08178894 2.62468585 11.0142905 5.4163597 1.36562247 5.4163597"></polygon>
+            <path d="M5.21591153,0 C5.90341528,3.24759809e-16 6.59934714,0 7.19215522,9.72311185e-15 C7.62538101,0.176981172 8.07047141,0.649736939 8.52742642,1.4182673 L3.85248654,1.4182673 C4.2949114,0.649736939 4.7493864,0.176981172 5.21591153,0 Z" id="Rectangle-28-Copy" stroke="#94A7EE" fill="#94A7EE" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10.3740065,18.129006 L2.07070542,18.129006 C0.690235141,15.1815169 0,12.8117658 0,11.0197524 C0,9.22773906 0.485969718,7.86336107 1.45790916,6.92661844 L10.9868027,6.92661844 C11.9587422,7.86336107 12.4447119,9.22773906 12.4447119,11.0197524 C12.4447119,12.8117658 11.7544767,15.1815169 10.3740065,18.129006 Z" id="Combined-Shape" stroke="#94A7EE" fill="#94A7EE" stroke-linejoin="round"></path>
+            <polygon id="Rectangle-32" stroke="#94A7EE" fill="#94A7EE" stroke-linejoin="round" points="2.10045099 21.2539278 10.3301825 21.2539278 10.3301825 23.1909877 2.10045099 23.1909877"></polygon>
+            <rect id="Rectangle-33" stroke="#CEBCEF" fill="#CEBCEF" x="6.26581885" y="1.10958174" width="1" height="1.33746994" rx="0.5"></rect>
+            <circle id="Oval-23" fill="#CEBCEF" cx="3.000392" cy="22.2631516" r="1"></circle>
+            <circle id="Oval-23-Copy" fill="#CEBCEF" cx="5.12191393" cy="22.2631516" r="1"></circle>
+            <circle id="Oval-23-Copy-2" fill="#CEBCEF" cx="7.24343585" cy="22.2631516" r="1"></circle>
+            <circle id="Oval-23-Copy-3" fill="#CEBCEF" cx="9.36495777" cy="22.2631516" r="1"></circle>
+            <ellipse id="Oval-24" stroke="#CEBCEF" fill="#CEBCEF" cx="6.22235594" cy="12.4628046" rx="2.04528619" ry="4.09057239"></ellipse>
+        </g>
+    </g>
+</svg>

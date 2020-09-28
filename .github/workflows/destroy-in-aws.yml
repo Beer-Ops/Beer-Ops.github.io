@@ -1,0 +1,32 @@
+name: Destroy from AWS
+on:
+  repository_dispatch:
+    types: [destroy-in-aws]
+
+jobs:
+  destroy-from-aws:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update issue
+      env:
+        issue_number: '${{github.event.client_payload.issue}}'
+        cloud: '${{github.event.client_payload.cloud}}'
+        gprUrl: '${{github.event.client_payload.gprUrl}}'
+        customer: '${{github.event.client_payload.customer}}'
+      uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { issue_number, cloud, gprUrl, customer } = process.env;
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Destroyed environment successfully from ' + cloud + ' ( ' + gprUrl + ' ) for ' +  customer
+          })
+          github.issues.removeLabel({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'deployed'
+          })

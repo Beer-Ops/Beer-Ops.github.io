@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="robots" content="noindex, nofollow" />
+
+        <!-- META DATA -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1{% if page.id == 'kiosk-octocat-generator' %},user-scalable=no{% endif %}">
+        <!--[if IE]><meta http-equiv="cleartype" content="on" /><![endif]-->
+        <meta name="theme-color" content= "#24292E">
+
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+        <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+        <link href="{{ "/assets/css/main.css" | relative_url }}" rel="stylesheet">
+
+        <link rel="shortcut icon" type="image/ico" href="/assets/images/favicons/favicon.png" />
+        <link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.png" />
+        <link rel="icon" href="/assets/images/favicons/android-favicon.png">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@github">
+        <meta name="twitter:title" content="{{ site.title }} | {{ page.title }}">
+        <meta name="twitter:description" content="{{ site.description }}">
+        <meta name="twitter:image" content="https://myoctocat.com/assets/images/Octocat-Social-Card.png">
+
+        <meta property="og:url" content="{{ page.url }}" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="{{ site.title }} | {{ page.title }}" />
+        <meta property="og:description" content="{{ site.description }}" />
+        <meta property="og:image" content="https://myoctocat.com/assets/images/Octocat-Social-Card.png" />
+
+        {% seo %}
+
+        <script>
+          (function(g,h,s,e,r,v,i){g['GoogleAnalyticsObject']=r;g[r]=g[r]||function(){
+          (g[r].q=g[r].q||[]).push(arguments)},g[r].l=1*new Date();v=h.createElement(s),
+          i=h.getElementsByTagName(s)[0];v.async=1;v.src=e;i.parentNode.insertBefore(v,i)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-3769691-103', 'auto');
+          ga('send', 'pageview');
+        </script>
+    </head>
+
+
+
+    <body class="template-{{ page.id }}  {% if page.id == 'kiosk-octocat-generator' %}kiosk{% endif %}">
+        <div id="page">
+            <a href="#content" class="sr-only">Skip to content</a>
+
+            {% include header.html %}
+
+            <main id="content" class="main page-content" aria-label="Content" role="main">
+                {{ content }}
+            </main>
+
+            {% if page.id == 'homepage' %}
+            {% include footer.html %}
+            {% endif %}
+
+
+            <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+            {% if page.id == 'octocat-generator' or page.id == 'kiosk-octocat-generator' %}
+            <script src="{{ "/assets/js/octocat.js" | relative_url }}" async></script>
+            <script src="{{ "/assets/js/save.js" | relative_url }}" async></script>
+            {% endif %}
+        </div>
+    </body>
+</html>

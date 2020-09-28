@@ -1,0 +1,39 @@
+// ---------------------------------------------------------------------
+//  Site Footer Styles
+// ---------------------------------------------------------------------
+
+.site-footer {
+    background: $black;
+    padding: 28px 0;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    small, ul a {
+        color: $white;
+        font-size: 12px;
+        letter-spacing: -.1;
+    }
+
+    ul {
+        margin: 16px 0 8px;
+
+        li {
+            display: inline-block;
+            margin: 4px 10px;
+        }
+
+        a {
+            display: block;
+
+            transition: opacity $trans;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}

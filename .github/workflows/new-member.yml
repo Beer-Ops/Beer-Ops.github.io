@@ -1,0 +1,12 @@
+name: New member added to repo
+on: [member]
+
+jobs:
+  react-on-new-member:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Member added
+      if:  github.event.action == 'added'
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"  

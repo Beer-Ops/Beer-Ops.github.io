@@ -1,0 +1,203 @@
+// ---------------------------------------------------------------------
+//  Object Nav
+// ---------------------------------------------------------------------
+
+@include stop-at($panel-bp) {
+    #object-nav {
+        height: 142px;
+    }
+}
+
+.object-panel-wrap {
+    width: 100%;
+    position: absolute;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    ::-moz-scrollbar {
+        display: none;
+    }
+
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+
+    @include stop-at($panel-bp) {
+        bottom: 0;
+        left: 0;
+    }
+
+    @include start-at($panel-bp) {
+        width: 200px;
+        right: 3%;
+        top: 50%;
+        max-height: calc(100% - 60px);
+        height: 100%;
+        transform: translate3d(0, -50%, 0);
+        overflow: hidden;
+        z-index: 4;
+        //max-height: 620px;
+    }
+
+    @include start-at($xlarge) {
+        width: 260px;
+    }
+}
+
+.object-preview {
+    .object {
+        display: none;
+    }
+}
+
+.object-panel,
+.object-panel__inner {
+    -webkit-overflow-scrolling: touch;
+}
+
+
+// ----------------------------------------
+// Mobile
+// ----------------------------------------
+
+@include stop-at($panel-bp) {
+
+    .object-panel {
+        position: absolute;
+        width: 100%;
+        overflow: auto;
+        padding: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 4;
+
+        .object-panel__inner {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 84px;
+
+            &:before,
+            &:after {
+                width: 20px;
+                height: 2px;
+                padding: 0 10px;
+                display: block;
+                content: '';
+                //background: red;
+            }
+        }
+
+        .tile {
+            margin: 0 4px;
+        }
+
+        .color-swatch-wrap {
+            margin: 0 auto;
+        }
+    }
+
+    .object-panel-wrap--double {
+
+        .object-panel__objects {
+            bottom: 72px;
+        }
+
+        .object-panel__colors {
+
+            .object-panel__inner {
+                height: 70px;
+                background-color: $off-white;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
+// Desktop Styles
+// ----------------------------------------
+
+@include start-at($panel-bp) {
+
+    .object-panel {
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        overflow: hidden;
+        padding: 0;
+        top: 0;
+        right: 0;
+
+        .object-panel__inner {
+            position: absolute;
+            background: $white;
+            width: 100%;
+            height: auto;
+            overflow: scroll;
+            padding: 4px 0 24px;
+            top: 44px;
+            bottom: 44px;
+            border-left: 1px solid darken($gray-light, 5%);
+            border-right: 1px solid darken($gray-light, 5%);
+        }
+
+        .tile {
+            margin: 8px auto;
+        }
+
+        .color-swatch-wrap {
+            margin: 0 auto;
+        }
+    }
+
+    .object-panel-wrap--double {
+
+        .object-panel__objects {
+            .scroll-up {
+                border-radius: 0 10px 0 0;
+            }
+            .scroll-down {
+                border-radius: 0 0 10px 0;
+            }
+        }
+
+        .object-panel__colors {
+            right: 100px;
+
+            .object-panel__inner {
+                border-right: none;
+                background: $off-white;
+            }
+
+            .scroll-up {
+                border-radius: 10px 0 0 0;
+                border-right: none;
+            }
+            .scroll-down {
+                border-right: none;
+                border-radius: 0 0 0 10px;
+            }
+        }
+    }
+}
+
+
+@include start-at($xlarge) {
+    .object-panel {
+        width: 130px;
+    }
+
+    .object-panel-wrap--double {
+
+        .object-panel__colors {
+            right: 130px;
+        }
+    }
+}
