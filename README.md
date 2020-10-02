@@ -1,8 +1,6 @@
 # myoctocat.com
 
-![image](https://github.com/octodemo/octodemo.github.io/workflows/Build%20and%20publish%20Docker%20image/badge.svg)
-![image](https://github.com/octodemo/octodemo.github.io/workflows/Bootstrap%20Repository/badge.svg)
-![image](https://github.com/octodemo/octodemo.github.io/workflows/IssueOps/badge.svg)
+![tagline](https://github.com/Anjan50/Beer-Ops.github.io/blob/master/tagline.png)
 
 
 Tailored version of the [Octocat Generator](https://myoctocat.com/) for demo purposes
@@ -19,6 +17,10 @@ then run `bundle exec jekyll serve`
 If you are having issues with the versions of ruby try running the following on the root of the project:
  - `brew install rbenv`
  - `rbenv install 2.6.3`
+ 
+ 
+ ## Amazing Octocat Example:
+ ![example](https://github.com/Anjan50/Beer-Ops.github.io/blob/master/example.png)
 
 ## How to demo
 
