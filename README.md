@@ -17,6 +17,10 @@ then run `bundle exec jekyll serve`
 If you are having issues with the versions of ruby try running the following on the root of the project:
  - `brew install rbenv`
  - `rbenv install 2.6.3`
+ 
+ 
+ ## Amazing Octocat Example:
+ ![example](https://github.com/Anjan50/Beer-Ops.github.io/blob/master/example.png)
 
 ## How to demo
 
