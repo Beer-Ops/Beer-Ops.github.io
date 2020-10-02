@@ -22,4 +22,4 @@ If you are having issues with the versions of ruby try running the following on 
 
 ## How to demo
 
-The scripts to set up the custom demo are [here](scripts/).
+The scripts to set up the custom demo are available [here](scripts/).
