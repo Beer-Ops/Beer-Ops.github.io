@@ -65,8 +65,7 @@ jobs:
         docker pull "${{ needs.build.outputs.dockerimage }}"
     - uses: anchore/scan-action@v3
       with:
-        image-reference: "${{ needs.build.outputs.dockerimage }}"
-        dockerfile-path: "Dockerfile"
+        image: "${{ needs.build.outputs.dockerimage }}"
         fail-build: false
         acs-report-enable: true
         acs-report-severity-cutoff: "Medium"
