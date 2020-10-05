@@ -63,7 +63,7 @@ jobs:
         ./cleanup.sh
         docker login -u ${GITHUB_ACTOR} -p ${GITHUB_TOKEN} docker.pkg.github.com
         docker pull "${{ needs.build.outputs.dockerimage }}"
-    - uses: anchore/scan-action@v3
+    - uses: anchore/scan-action@v2
       with:
         image: "${{ needs.build.outputs.dockerimage }}"
         fail-build: false
