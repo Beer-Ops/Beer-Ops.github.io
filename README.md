@@ -1,10 +1,5 @@
 # myoctocat.com
 
-![image](https://github.com/octodemo/octodemo.github.io/workflows/Build%20and%20publish%20Docker%20image/badge.svg)
-![image](https://github.com/octodemo/octodemo.github.io/workflows/Bootstrap%20Repository/badge.svg)
-![image](https://github.com/octodemo/octodemo.github.io/workflows/IssueOps/badge.svg)
-
-
 Tailored version of the [Octocat Generator](https://myoctocat.com/) for demo purposes
 
 ![image](https://user-images.githubusercontent.com/1872314/59640419-d88bf300-9112-11e9-85f9-88ad6a2a3a33.png)
