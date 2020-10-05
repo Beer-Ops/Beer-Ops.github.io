@@ -63,14 +63,13 @@ jobs:
         ./cleanup.sh
         docker login -u ${GITHUB_ACTOR} -p ${GITHUB_TOKEN} docker.pkg.github.com
         docker pull "${{ needs.build.outputs.dockerimage }}"
-    - uses: anchore/scan-action@v2
+    - uses: anchore/scan-action@v1
       with:
-        image: "${{ needs.build.outputs.dockerimage }}"
+        image-reference: "${{ needs.build.outputs.dockerimage }}"
+        dockerfile-path: "Dockerfile"
         fail-build: false
-        debug: false
         acs-report-enable: true
-        severity-cutoff: "high"
-        path: "."
+        acs-report-severity-cutoff: "Medium"
     - name: anchore inline scan JSON results
       run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
     - name: anchore action SARIF report
