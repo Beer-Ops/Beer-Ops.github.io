@@ -70,6 +70,7 @@ jobs:
         debug: false
         acs-report-enable: true
         severity-cutoff: "high"
+        path: "."
     - name: anchore inline scan JSON results
       run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
     - name: anchore action SARIF report
