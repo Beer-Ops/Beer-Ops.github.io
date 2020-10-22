@@ -55,7 +55,7 @@ jobs:
     if: needs.build.outputs.enablecontainerscanning == 'true'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@undefined-links
     - name: Retrieve image
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -63,13 +63,13 @@ jobs:
         ./cleanup.sh
         docker login -u ${GITHUB_ACTOR} -p ${GITHUB_TOKEN} docker.pkg.github.com
         docker pull "${{ needs.build.outputs.dockerimage }}"
-    - uses: anchore/scan-action@v1
+    - uses: anchore/scan-action@v2
       with:
-        image-reference: "${{ needs.build.outputs.dockerimage }}"
-        dockerfile-path: "Dockerfile"
+        image: "${{ needs.build.outputs.dockerimage }}"
         fail-build: false
+        debug: false
         acs-report-enable: true
-        acs-report-severity-cutoff: "Medium"
+        severity-cutoff: "high"
     - name: anchore inline scan JSON results
       run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
     - name: anchore action SARIF report
