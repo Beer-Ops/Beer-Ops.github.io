@@ -20,6 +20,6 @@ export OCTO_ORG="PizzaHub"
 export OCTO_REPO="pizzahub.github.io"
 ```
 
-Create the personal access token for `GITHUB_COM_TOKEN` and `OCTO_UX_TOKEN` from your [developer settings](https://github.com/settings/tokens). If you dont want to set these every time, they can be set in your `.bash_profile` and loaded into your shell by opening a brand new terminal window.
+Create yours personal access token for `GITHUB_COM_TOKEN` and `OCTO_UX_TOKEN` from your [developer settings](https://github.com/settings/tokens). If you dont want to set these every time then, they can be set in your `.bash_profile` and loaded into your shell by opening a brand new terminal window.
 
-Also make sure you have `jq` installed for nicer output on the CLI (e.g. `brew install jq` on macOS).
+Also make sure that you have `jq` installed for nicer output on the CLI (e.g. `brew install jq` on macOS).
